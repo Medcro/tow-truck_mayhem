@@ -33,31 +33,30 @@ This guide is for developers working directly on this repository.
 
 We use a "Shared Repository" model. **Never push changes directly to the `main` branch.** Always use a feature branch for your work.
 
-**Step A: Sync with the Main Branch**
+### <font color="gold">Step A: Sync with the Main Branch</font>
 
 Before you start any new work, make sure your local `main` branch is up-to-date.
 
-````bash
+```bash
 # Go to your main branch
 git checkout main
 
 # Download the latest changes from the server
 git pull origin main
+```
 
-````
-
-**Step B: Create a New Branch**
+### \<font color="gold"\>Step B: Create a New Branch\</font\>
 
 Create a new, descriptive branch for the feature or bug you are working on.
 
 ```bash
 # Replace 'my-new-feature' with a descriptive name
 git checkout -b my-new-feature
-````
+```
 
 _(Good names: `fix-steering-bug`, `add-level-3`, `update-horn-sound`)_
 
-**Step C: Make Your Changes & Commit**
+### \<font color="gold"\>Step C: Make Your Changes & Commit\</font\>
 
 1.  Now, open Godot and make all your code, scene, and asset changes.
 2.  Once you've tested your changes, go back to your terminal.
@@ -73,7 +72,7 @@ _(Good names: `fix-steering-bug`, `add-level-3`, `update-horn-sound`)_
     _(Good commit message prefixes: `Feat:`, `Fix:`, `Refactor:`, `Docs:`)_
     _(Reference: https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)_
 
-**Step D: Push Your Branch to the Repository**
+### \<font color="gold"\>Step D: Push Your Branch to the Repository\</font\>
 
 Send your new branch (and all its commits) up to the central repository.
 
@@ -82,7 +81,7 @@ Send your new branch (and all its commits) up to the central repository.
 git push origin my-new-feature
 ```
 
-**Step E: Open a Pull Request (PR)**
+### \<font color="gold"\>Step E: Open a Pull Request (PR)\</font\>
 
 1.  Go to the repository on the GitHub website (e.g., `https://github.com/Medcro/Tow-Truck_Mayhem`).
 2.  GitHub will see your newly pushed branch and show a yellow bar: "Your branch `my-new-feature` is ready...".
@@ -91,3 +90,7 @@ git push origin my-new-feature
 5.  Click **"Create pull request"**.
 
 After the PR is reviewed and approved, it can be merged into `main`.
+
+```
+
+```
