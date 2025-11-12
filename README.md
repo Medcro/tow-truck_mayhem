@@ -44,6 +44,8 @@ git checkout main
 # Download the latest changes from the server
 git pull origin main
 
+````
+
 **Step B: Create a New Branch**
 
 Create a new, descriptive branch for the feature or bug you are working on.
