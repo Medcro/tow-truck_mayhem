@@ -16,7 +16,7 @@ This guide is for developers working directly on this repository.
 2.  **Install Git:** If you don't already have it, [download and install Git](https://git-scm.com/downloads).
 3.  **Clone the Repository:** On your local machine, open a terminal and run the following command (replace the URL with your project's URL):
     ```bash
-    git clone [https://github.com/Medcro/Tow-Truck_Mayhem](https://github.com/Medcro/Tow-Truck_Mayhem)
+    git clone https://github.com/Medcro/tow-truck_mayhem
     ```
 4.  **Navigate into the project folder:**
     ```bash
