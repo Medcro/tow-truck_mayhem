@@ -1,0 +1,134 @@
+[gd_scene load_steps=28 format=3 uid="uid://1rpounk3wmy0"]
+
+[ext_resource type="Texture2D" uid="uid://yofyn3a1gj6g" path="res://assets/main menu/main menu_fixed lineart.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://bswjx2ihgaeg4" path="res://scripts/main_menu.gd" id="1_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://btf7i7s1s1qxn" path="res://assets/main menu/main menu_hover start.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://i2dtxc3a0psx" path="res://assets/main menu/main menu_hover options.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://1y6o4120u736" path="res://assets/main menu/main menu_hover credits.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://8jcdhk17jxse" path="res://assets/main menu/main menu_hover exit.png" id="5_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
+texture = ExtResource("1_l6cm7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqqt6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("2_ekxnf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbmy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jk1qb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("3_8ln24")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgwnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flqon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqid"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ajci"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b55j"]
+texture = ExtResource("4_rtw2f")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pajh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7ex8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstxw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8egab"]
+texture = ExtResource("5_oa1go")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw5y6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svtp6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtw2f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 774.99994
+offset_top = 116.00001
+offset_right = 782.99994
+offset_bottom = 124.00001
+rotation = -0.3280756
+scale = Vector2(43.817997, 17.502432)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bqqt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wu84c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ln24")
+
+[node name="Option" type="Button" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 281.0
+offset_right = 795.0
+offset_bottom = 289.0
+rotation = -0.32021737
+scale = Vector2(43.512108, 11.461155)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lgwnu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flqon")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 371.99997
+offset_right = 817.0
+offset_bottom = 379.99997
+rotation = -0.27845085
+scale = Vector2(39.790356, 12.839688)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rcqid")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7b55j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j7ex8")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 819.00006
+offset_top = 437.00003
+offset_right = 827.10205
+offset_bottom = 444.70944
+rotation = -0.042959306
+scale = Vector2(38.702087, 13.394755)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8egab")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gw5y6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_svtp6")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
