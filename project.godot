@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Tow-Truck Mayhem"
-run/main_scene="uid://0qp2flyw8irw"
+run/main_scene="uid://1rpounk3wmy0"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 
