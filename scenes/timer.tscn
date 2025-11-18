@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5c7teuesesnn"]
+
+[ext_resource type="Script" uid="uid://bgo0rwj4psjrv" path="res://scripts/timer.gd" id="1_srplv"]
+
+[node name="Timer" type="Node" groups=["timer"]]
+script = ExtResource("1_srplv")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
