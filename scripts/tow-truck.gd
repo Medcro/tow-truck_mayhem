@@ -1,6 +1,8 @@
 class_name TowTruck
 extends CharacterBody2D
 
+@onready var sfx_drive: AudioStreamPlayer2D = $sfx_engine
+
 # Vehicle Tuning Properties
 @export var wheel_base: float = 70.0 # how far apart the two wheelsc
 @export var steering_angle: float = 15.0 # how far the front wheel turn
@@ -12,11 +14,18 @@ extends CharacterBody2D
 @export var slip_speed: float = 400.0 # Speed at which traction is reduced
 @export var traction_fast: float = 0.1 # "Slippy" traction at high speed
 @export var traction_slow: float = 0.7 # "Grippy" traction at low speed
+
+
 var acceleration: Vector2 = Vector2.ZERO
 var steer_direction: float = 0.0 # the direction that we turning in -/+
 
+func _ready() -> void:
+	sfx_drive.play()
+
 # function to handle physics process of the truck (get called 60 times per second)
 func _physics_process(delta: float):
+	handleSound()
+	
 	acceleration = Vector2.ZERO
 	
 	get_input()
@@ -40,7 +49,7 @@ func get_input():
 		acceleration = transform.x * engine_power
 	if Input.is_action_pressed("brake"):
 		acceleration = transform.x * braking_power
-
+		
 # the main function to calculate the steering logic
 func calculate_steering(delta: float):
 	# determined the position of the front wheel and the rear wheel
@@ -77,3 +86,10 @@ func apply_friction():
 	var drag_force: Vector2 = velocity * velocity.length() * drag
 	
 	acceleration += drag_force + friction_force
+
+# Adjusts the driving sound effect pitch based on the vehicle's velocity.
+func handleSound():
+	var newVal = (velocity.length() / 250) + 0.5
+	if acceleration.length() != 0:
+		newVal = (velocity.length() /250) + 0.5
+	sfx_drive.set_pitch_scale(newVal)
