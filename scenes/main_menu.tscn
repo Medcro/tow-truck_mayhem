@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://1rpounk3wmy0"]
+[gd_scene load_steps=32 format=3 uid="uid://1rpounk3wmy0"]
 
 [ext_resource type="Texture2D" uid="uid://yofyn3a1gj6g" path="res://assets/main menu/main menu_fixed lineart.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bswjx2ihgaeg4" path="res://scripts/main_menu.gd" id="1_rtw2f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://i2dtxc3a0psx" path="res://assets/main menu/main menu_hover options.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://1y6o4120u736" path="res://assets/main menu/main menu_hover credits.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://8jcdhk17jxse" path="res://assets/main menu/main menu_hover exit.png" id="5_oa1go"]
+[ext_resource type="Script" uid="uid://bfn7wdj841acu" path="res://scenes/audio_control.gd" id="7_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("1_l6cm7")
@@ -54,6 +55,16 @@ texture = ExtResource("5_oa1go")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svtp6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rtw2f"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oa1go"]
+color = Color(0, 0.45882353, 0.7254902, 1)
+thickness = 6
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -63,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rtw2f")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +144,75 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_gw5y6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_svtp6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Settings" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.5
+offset_top = -205.0
+offset_right = 314.5
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.5
+offset_right = 162.5
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 171.5
+offset_top = 304.0
+offset_right = 216.5
+offset_bottom = 335.0
+scale = Vector2(6.6956034, 3.402464)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+text = "Back"
+
+[node name="AudioControl" type="HSlider" parent="Settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.5
+offset_top = 68.0
+offset_right = 234.5
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_rtw2f")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_oa1go")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oa1go")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_oa1go")
+audio_bus_name = "Master"
+
+[node name="Label2" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 40.5
+offset_top = 72.0
+offset_right = 186.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 26
+text = "Master"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Settings/AudioControl" to="Settings/AudioControl" method="_on_value_changed"]
