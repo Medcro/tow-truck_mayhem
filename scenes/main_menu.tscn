@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://1rpounk3wmy0"]
+[gd_scene load_steps=44 format=3 uid="uid://1rpounk3wmy0"]
 
 [ext_resource type="Texture2D" uid="uid://yofyn3a1gj6g" path="res://assets/main menu/main menu_fixed lineart.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bswjx2ihgaeg4" path="res://scripts/main_menu.gd" id="1_rtw2f"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://i2dtxc3a0psx" path="res://assets/main menu/main menu_hover options.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://1y6o4120u736" path="res://assets/main menu/main menu_hover credits.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://8jcdhk17jxse" path="res://assets/main menu/main menu_hover exit.png" id="5_oa1go"]
-[ext_resource type="Script" uid="uid://bfn7wdj841acu" path="res://scenes/audio_control.gd" id="7_oa1go"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="7_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cijy3gf1tu2xe" path="res://assets/main menu/Are_u_sure...png" id="8_5dd4i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("1_l6cm7")
@@ -64,6 +65,29 @@ thickness = 6
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_oa1go"]
 color = Color(0, 0.45882353, 0.7254902, 1)
 thickness = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+texture = ExtResource("8_5dd4i")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dd4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dfpl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qywvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3wgol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1acrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr8o3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a85y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hl5e0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -140,6 +164,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_gw5y6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_svtp6")
 
 [node name="Settings" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -205,9 +230,49 @@ offset_bottom = 108.0
 theme_override_font_sizes/font_size = 26
 text = "Master"
 
+[node name="ConfirmationExit" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 13.0
+offset_right = 31.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rcqid")
+
+[node name="Yes" type="Button" parent="ConfirmationExit"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 346.0
+offset_right = 519.0
+offset_bottom = 418.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5dd4i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8egab")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dfpl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qywvv")
+
+[node name="No" type="Button" parent="ConfirmationExit"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 344.0
+offset_right = 707.0
+offset_bottom = 410.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3wgol")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1acrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vr8o3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1a85y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hl5e0")
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Settings/AudioControl" to="Settings/AudioControl" method="_on_value_changed"]
+[connection signal="pressed" from="ConfirmationExit/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ConfirmationExit/No" to="." method="_on_no_pressed"]
