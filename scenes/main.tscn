@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=4 format=3 uid="uid://7qfqg006l7ij"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://csnmve3v1a6yc" path="res://scenes/car.tscn" id="3_tbgi4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1417, -524)
+scale = Vector2(25.343748, 15.46875)
+texture = ExtResource("1_sugp2")
+
+[node name="Tow-Truck" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(200, 107)
+
+[node name="Car" parent="." instance=ExtResource("3_tbgi4")]
+position = Vector2(47, 105)
+rotation = 1.5704333
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(114, 106)
+node_a = NodePath("../Tow-Truck")
+node_b = NodePath("../Car")
+angular_limit_enabled = true
+angular_limit_lower = 2.0943952
+angular_limit_upper = -2.0943952

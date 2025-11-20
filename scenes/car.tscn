@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://csnmve3v1a6yc"]
+
+[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/car.tres" id="1_c35m8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c35m8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qt2eu"]
+radius = 26.0
+height = 132.0
+
+[node name="Car" type="RigidBody2D"]
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_c35m8")
+gravity_scale = 0.0
+linear_damp = 16.0
+angular_velocity = 0.034906585
+angular_damp_mode = 1
+angular_damp = 32.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c35m8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qt2eu")

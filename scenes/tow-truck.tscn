@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bajthmljdxy5f"]
 
-[ext_resource type="Script" uid="uid://blx5p5fr6x7ut" path="res://scripts/tow-truck.gd" id="1_ho5m3"]
-[ext_resource type="Texture2D" uid="uid://8i5eg6dxbl04" path="res://assets/tow_truck1.tres" id="2_6qgy5"]
+[ext_resource type="Script" uid="uid://d1tcml14krb3w" path="res://scripts/tow-truck.gd" id="1_ho5m3"]
+[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/tow_truck.tres" id="2_de388"]
 [ext_resource type="AudioStream" uid="uid://cpr7l8vq0hehk" path="res://assets/audio/carengine.wav" id="3_de388"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_npdvv"]
@@ -13,7 +13,7 @@ script = ExtResource("1_ho5m3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5647471
-texture = ExtResource("2_6qgy5")
+texture = ExtResource("2_de388")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
