@@ -145,6 +145,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_svtp6")
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
