@@ -2,7 +2,6 @@ class_name TowTruck
 extends CharacterBody2D
 
 @onready var sfx_drive: AudioStreamPlayer2D = $sfx_engine
-@onready var idle_engine: AudioStreamPlayer2D = $idle_engine
 
 # Vehicle Tuning Properties
 @export var wheel_base: float = 70.0 # how far apart the two wheelsc
@@ -92,7 +91,3 @@ func apply_friction():
 func handleSound():
 	var newVal = (velocity.length() / 250) + 0.5
 	sfx_drive.set_pitch_scale(newVal)
-	
-	if velocity.length() == 0.0:
-		idle_engine.play()
-	print(velocity.length())

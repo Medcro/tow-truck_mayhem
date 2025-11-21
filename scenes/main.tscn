@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=5 format=3 uid="uid://7qfqg006l7ij"]
 
 [ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://csnmve3v1a6yc" path="res://scenes/car.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b7u3th8n3iaqk" path="res://scenes/timer.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D"]
 
@@ -25,3 +26,7 @@ node_b = NodePath("../Car")
 angular_limit_enabled = true
 angular_limit_lower = 2.0943952
 angular_limit_upper = -2.0943952
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
