@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rni2yfyra013"]
+[gd_scene load_steps=13 format=3 uid="uid://rni2yfyra013"]
 
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_fjrip"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cx8fywn5oyhow" path="res://scripts/hurtbox.gd" id="3_smehm"]
 [ext_resource type="AudioStream" uid="uid://l8r4jk2qrknf" path="res://assets/audio/Engine Driving SFX.mp3" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dwo34n5pghue7" path="res://assets/full_health.tres" id="8_smehm"]
+[ext_resource type="Script" uid="uid://ddgr5bgyr0x08" path="res://scripts/HeartHealthUI.gd" id="8_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://jnrfai6s1pd1" path="res://assets/empty-hearth.tres" id="10_y4r1p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
 radius = 13.0
@@ -78,6 +81,47 @@ angular_limit_upper = -2.0943952
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_qhqgy")
 metadata/_custom_type_script = "uid://wopay8ms6ewt"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
+offset_right = 397.0
+offset_bottom = 62.0
+theme_override_constants/separation = 20
+script = ExtResource("8_ur7pv")
+health_component = NodePath("../../Health")
+full_heart_texture = ExtResource("8_smehm")
+empty_heart_texture = ExtResource("10_y4r1p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
 
 [connection signal="area_entered" from="Tow-Truck/Hurtbox" to="Tow-Truck/Hurtbox" method="_on_area_entered"]
 [connection signal="body_shape_entered" from="Tow-Truck/Hurtbox" to="Tow-Truck/Hurtbox" method="_on_body_shape_entered"]

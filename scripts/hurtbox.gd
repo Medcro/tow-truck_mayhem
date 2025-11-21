@@ -31,7 +31,6 @@ func _on_body_exited(body: Node2D):
 # taking damage and set temporary immorrality
 func take_damage(collision_body: Collision):
 	health.health -= collision_body.damage
-	print("took %d damage. Health: %d/%d" % [collision_body.damage, health.health, health.max_health])
 	hit_received.emit(collision_body.damage, collision_body)
 	
 	health.set_temporary_immortality(invincibility_duration)
