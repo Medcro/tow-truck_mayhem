@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=7 format=3 uid="uid://7qfqg006l7ij"]
 
 [ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://csnmve3v1a6yc" path="res://scenes/car.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dthkrlr4x3ypa" path="res://scenes/waypoint_marker.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c3ldrsge880xd" path="res://scenes/timer.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://sjosjoav32e4" path="res://scenes/collision.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bo3lxy34ofe65" path="res://scenes/game_over_manager.tscn" id="5_tefeu"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,17 +14,19 @@ position = Vector2(1417, -524)
 scale = Vector2(25.343748, 15.46875)
 texture = ExtResource("1_sugp2")
 
-[node name="Tow-Truck" parent="." instance=ExtResource("2_jyhfs")]
-position = Vector2(200, 107)
+[node name="Collision" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(1195, 106)
 
-[node name="Car" parent="." instance=ExtResource("3_tbgi4")]
-position = Vector2(47, 105)
-rotation = 1.5704333
+[node name="WaypointMarker" parent="Collision" instance=ExtResource("3_tefeu")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, -94)
+on_screen_offset = Vector2(0.5, -100)
+screen_margin = 50.0
 
-[node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(114, 106)
-node_a = NodePath("../Tow-Truck")
-node_b = NodePath("../Car")
-angular_limit_enabled = true
-angular_limit_lower = 2.0943952
-angular_limit_upper = -2.0943952
+[node name="Player" parent="." instance=ExtResource("4_tbgi4")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
+
+[node name="GameOverManager" parent="CanvasLayer" instance=ExtResource("5_tefeu")]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo3lxy34ofe65"]
+
+[ext_resource type="Script" uid="uid://xn6i3miaq2ep" path="res://scripts/game_over_manager.gd" id="1_kbllt"]
+[ext_resource type="AudioStream" uid="uid://dtot4leyjyx5k" path="res://assets/audio/Explosion SFX.mp3" id="2_wbsog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbsog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u8u7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dprm"]
+
+[node name="GameOverManager" type="Node"]
+script = ExtResource("1_kbllt")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.625
+offset_top = -197.125
+offset_right = 261.625
+offset_bottom = 197.125
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 62.625
+offset_top = 242.125
+offset_right = 200.625
+offset_bottom = 335.125
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbsog")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u8u7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6dprm")
+text = "Restart
+"
+
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 336.625
+offset_top = 243.125
+offset_right = 474.625
+offset_bottom = 336.125
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbsog")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u8u7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6dprm")
+text = "Back"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_wbsog")
+volume_db = -14.0
+
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]

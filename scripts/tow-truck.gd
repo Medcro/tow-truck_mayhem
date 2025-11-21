@@ -2,7 +2,6 @@ class_name TowTruck
 extends CharacterBody2D
 
 @onready var sfx_drive: AudioStreamPlayer2D = $sfx_engine
-@onready var idle_engine: AudioStreamPlayer2D = $idle_engine
 
 # Vehicle Tuning Properties
 @export var wheel_base: float = 70.0 # how far apart the two wheelsc
@@ -16,11 +15,10 @@ extends CharacterBody2D
 @export var traction_fast: float = 0.1 # "Slippy" traction at high speed
 @export var traction_slow: float = 0.7 # "Grippy" traction at low speed
 
-
 var acceleration: Vector2 = Vector2.ZERO
 var steer_direction: float = 0.0 # the direction that we turning in -/+
 
-func _ready() -> void:
+func _ready():
 	sfx_drive.play()
 	
 # function to handle physics process of the truck (get called 60 times per second)
@@ -92,7 +90,3 @@ func apply_friction():
 func handleSound():
 	var newVal = (velocity.length() / 250) + 0.5
 	sfx_drive.set_pitch_scale(newVal)
-	
-	if velocity.length() == 0.0:
-		idle_engine.play()
-	print(velocity.length())

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dthkrlr4x3ypa"]
+
+[ext_resource type="Texture2D" uid="uid://bciox8a8266yo" path="res://assets/art_atlas.png" id="1_ov4de"]
+[ext_resource type="Script" uid="uid://bg2dcn7lkyuwy" path="res://scripts/waypoint_marker.gd" id="2_otagc"]
+
+[node name="WaypointMarker" type="Sprite2D"]
+z_index = 2000
+texture_filter = 1
+position = Vector2(58, 59)
+scale = Vector2(8.25, 8.375)
+texture = ExtResource("1_ov4de")
+hframes = 5
+script = ExtResource("2_otagc")

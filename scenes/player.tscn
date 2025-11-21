@@ -1,0 +1,133 @@
+[gd_scene load_steps=14 format=3 uid="uid://rni2yfyra013"]
+
+[ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_fjrip"]
+[ext_resource type="PackedScene" uid="uid://csnmve3v1a6yc" path="res://scenes/car.tscn" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://wopay8ms6ewt" path="res://scripts/health.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cx8fywn5oyhow" path="res://scripts/hurtbox.gd" id="3_smehm"]
+[ext_resource type="AudioStream" uid="uid://l8r4jk2qrknf" path="res://assets/audio/Engine Driving SFX.mp3" id="4_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dwo34n5pghue7" path="res://assets/full_health.tres" id="8_smehm"]
+[ext_resource type="Script" uid="uid://ddgr5bgyr0x08" path="res://scripts/HeartHealthUI.gd" id="8_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://jnrfai6s1pd1" path="res://assets/empty-hearth.tres" id="10_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://cgrnryxgd87yo" path="res://assets/audio/Car Crash SFX.mp3" id="11_d2wvv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
+radius = 13.0
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
+radius = 26.0
+height = 132.0
+
+[node name="Player" type="Node2D"]
+
+[node name="Tow-Truck" parent="." instance=ExtResource("1_g2els")]
+position = Vector2(146, -3)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tow-Truck"]
+rotation = 1.5647471
+texture = ExtResource("2_fjrip")
+
+[node name="Camera2D2" type="Camera2D" parent="Tow-Truck"]
+zoom = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tow-Truck"]
+position = Vector2(1, -1)
+rotation = 1.5811385
+scale = Vector2(2.2738907, 2.5285392)
+shape = SubResource("CapsuleShape2D_fjrip")
+
+[node name="Hurtbox" type="Area2D" parent="Tow-Truck" node_paths=PackedStringArray("health")]
+script = ExtResource("3_smehm")
+health = NodePath("../../Health")
+
+[node name="HurtboxArea" type="CollisionShape2D" parent="Tow-Truck/Hurtbox"]
+position = Vector2(1, -1)
+rotation = 1.5811385
+scale = Vector2(2.4338822, 2.607293)
+shape = SubResource("CapsuleShape2D_fjrip")
+
+[node name="sfx_engine2" type="AudioStreamPlayer2D" parent="Tow-Truck"]
+stream = ExtResource("4_ur7pv")
+volume_db = -16.0
+parameters/looping = true
+
+[node name="Car" parent="." instance=ExtResource("2_qhqgy")]
+position = Vector2(-6, -4)
+rotation = 1.586557
+
+[node name="Sprite2D2" type="Sprite2D" parent="Car"]
+texture = ExtResource("5_y4r1p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Car"]
+scale = Vector2(1.0906376, 0.9743891)
+shape = SubResource("CapsuleShape2D_smehm")
+
+[node name="Hurtbox" type="Area2D" parent="Car" node_paths=PackedStringArray("health")]
+script = ExtResource("3_smehm")
+health = NodePath("../../Health")
+
+[node name="HurtboxArea" type="CollisionShape2D" parent="Car/Hurtbox"]
+shape = SubResource("CapsuleShape2D_smehm")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(57, -4)
+node_a = NodePath("../Tow-Truck")
+node_b = NodePath("../Car")
+angular_limit_enabled = true
+angular_limit_lower = 2.0943952
+angular_limit_upper = -2.0943952
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_qhqgy")
+metadata/_custom_type_script = "uid://wopay8ms6ewt"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
+offset_right = 397.0
+offset_bottom = 62.0
+theme_override_constants/separation = 20
+script = ExtResource("8_ur7pv")
+health_component = NodePath("../../Health")
+full_heart_texture = ExtResource("8_smehm")
+empty_heart_texture = ExtResource("10_y4r1p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Car_Crash_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_d2wvv")
+volume_db = -6.0
+
+[connection signal="area_entered" from="Tow-Truck/Hurtbox" to="Tow-Truck/Hurtbox" method="_on_area_entered"]
+[connection signal="body_shape_entered" from="Tow-Truck/Hurtbox" to="Tow-Truck/Hurtbox" method="_on_body_shape_entered"]
+[connection signal="health_depleted" from="Health" to="Car/Hurtbox" method="_on_health_depleted"]
