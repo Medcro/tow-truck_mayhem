@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://je1w0ueytrmk"
+path="res://.godot/imported/Engine Idle SFX.mp3-f87f949db5e3fcf0776726406556dfaf.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Engine Idle SFX.mp3"
+dest_files=["res://.godot/imported/Engine Idle SFX.mp3-f87f949db5e3fcf0776726406556dfaf.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

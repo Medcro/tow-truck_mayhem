@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l8r4jk2qrknf"
+path="res://.godot/imported/Engine Driving SFX.mp3-94d96cd188f1c2a8f4d5d2daffd6df83.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Engine Driving SFX.mp3"
+dest_files=["res://.godot/imported/Engine Driving SFX.mp3-94d96cd188f1c2a8f4d5d2daffd6df83.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
