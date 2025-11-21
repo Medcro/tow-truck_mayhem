@@ -1,23 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://csnmve3v1a6yc"]
+[gd_scene load_steps=5 format=3 uid="uid://wrs3i8btx63b"]
 
-[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/car.tres" id="1_c35m8"]
+[ext_resource type="Texture2D" uid="uid://cp3y74cnogrrf" path="res://assets/car1.tres" id="1_c35m8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c35m8"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qt2eu"]
-radius = 27.0
-height = 126.0
+[sub_resource type="GDScript" id="GDScript_qt2eu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ho5m3"]
+radius = 30.0
+height = 130.0
 
 [node name="Car" type="RigidBody2D"]
-mass = 100.0
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_c35m8")
 gravity_scale = 0.0
-linear_damp = 16.0
-angular_velocity = 0.034906585
-angular_damp = 16.0
+linear_damp = 3.0
+angular_damp = 3.0
+script = SubResource("GDScript_qt2eu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_c35m8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_qt2eu")
+shape = SubResource("CapsuleShape2D_ho5m3")

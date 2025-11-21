@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://i2dtxc3a0psx" path="res://assets/main menu/main menu_hover options.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://1y6o4120u736" path="res://assets/main menu/main menu_hover credits.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://8jcdhk17jxse" path="res://assets/main menu/main menu_hover exit.png" id="5_oa1go"]
-[ext_resource type="Script" uid="uid://bfn7wdj841acu" path="res://scripts/audio_control.gd" id="7_oa1go"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="7_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cijy3gf1tu2xe" path="res://assets/main menu/Are_u_sure...png" id="8_5dd4i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("1_l6cm7")
@@ -102,8 +103,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.746112
-offset_bottom = -8.746094
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
@@ -111,9 +110,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 774.99994
-offset_top = 107.2539
+offset_top = 116.00001
 offset_right = 782.99994
-offset_bottom = 115.2539
+offset_bottom = 124.00001
 rotation = -0.3280756
 scale = Vector2(43.817997, 17.502432)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ekxnf")
@@ -125,9 +124,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8ln24")
 [node name="Option" type="Button" parent="."]
 layout_mode = 0
 offset_left = 787.0
-offset_top = 272.25388
+offset_top = 281.0
 offset_right = 795.0
-offset_bottom = 280.25388
+offset_bottom = 289.0
 rotation = -0.32021737
 scale = Vector2(43.512108, 11.461155)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tbmy8")
@@ -135,14 +134,13 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5dd4i")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_lgwnu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_flqon")
-metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = 809.0
-offset_top = 363.25385
+offset_top = 371.99997
 offset_right = 817.0
-offset_bottom = 371.25385
+offset_bottom = 379.99997
 rotation = -0.27845085
 scale = Vector2(39.790356, 12.839688)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rcqid")
@@ -150,14 +148,13 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ajci")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7b55j")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5pajh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7ex8")
-metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 819.00006
-offset_top = 428.2539
+offset_top = 437.00003
 offset_right = 827.10205
-offset_bottom = 435.96332
+offset_bottom = 444.70944
 rotation = -0.042959306
 scale = Vector2(38.702087, 13.394755)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a8gd2")
@@ -165,7 +162,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_hstxw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8egab")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_gw5y6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_svtp6")
-metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Panel" parent="."]
 visible = false
