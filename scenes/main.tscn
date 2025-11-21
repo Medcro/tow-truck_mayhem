@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=7 format=3 uid="uid://7qfqg006l7ij"]
 
 [ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dthkrlr4x3ypa" path="res://scenes/waypoint_marker.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://c3ldrsge880xd" path="res://scenes/timer.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://sjosjoav32e4" path="res://scenes/collision.tscn" id="5_tbgi4"]
@@ -15,6 +16,12 @@ texture = ExtResource("1_sugp2")
 
 [node name="Collision" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(1195, 106)
+
+[node name="WaypointMarker" parent="Collision" instance=ExtResource("3_tefeu")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, -94)
+on_screen_offset = Vector2(0.5, -100)
+screen_margin = 50.0
 
 [node name="Player" parent="." instance=ExtResource("4_tbgi4")]
 
