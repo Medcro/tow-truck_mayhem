@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo3lxy34ofe65"]
+[gd_scene load_steps=15 format=3 uid="uid://bxt85dgajr42e"]
 
-[ext_resource type="Script" uid="uid://xn6i3miaq2ep" path="res://scripts/game_over_manager.gd" id="1_kbllt"]
+[ext_resource type="Script" path="res://scripts/game_over_manager.gd" id="1_kbllt"]
 [ext_resource type="Texture2D" uid="uid://cd5g77evst8iv" path="res://assets/game over/Game over screen.png" id="2_fisn8"]
 [ext_resource type="AudioStream" uid="uid://dtot4leyjyx5k" path="res://assets/audio/Explosion SFX.mp3" id="2_wbsog"]
 [ext_resource type="Texture2D" uid="uid://b6ny1mnowrusp" path="res://assets/game over/restart.tres" id="3_jl7wn"]
@@ -29,6 +29,7 @@ texture = ExtResource("4_m2rfc")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u8u7"]
 
 [node name="GameOverManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_kbllt")
 
 [node name="Panel" type="Panel" parent="."]
@@ -44,9 +45,11 @@ offset_right = 261.625
 offset_bottom = 197.125
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_c2u06")
 
 [node name="Restart" type="Button" parent="Panel"]
+process_mode = 3
 layout_mode = 0
 offset_left = 80.625
 offset_top = 261.125
@@ -61,6 +64,7 @@ text = "
 "
 
 [node name="Back" type="Button" parent="Panel"]
+process_mode = 3
 layout_mode = 0
 offset_left = 277.625
 offset_top = 249.125

@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://bfn7wdj841acu" path="res://scripts/audio_control.gd" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://cijy3gf1tu2xe" path="res://assets/main menu/Are_u_sure...png" id="8_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="8_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://d1rmcd6mytmjt" path="res://assets/main menu/Credits new.png" id="10_lgwnu"]
-[ext_resource type="Texture2D" uid="uid://b5bal7pygeta2" path="res://assets/main menu/x_button.tres" id="11_flqon"]
+[ext_resource type="Texture2D" path="res://assets/main menu/x_button.tres" id="11_flqon"]
+[ext_resource type="Texture2D" uid="uid://bx2dnycqys5iw" path="res://assets/main menu/Unwashed Credits.png" id="11_rcqid"]
 [ext_resource type="AudioStream" uid="uid://7gthe7vaxmte" path="res://assets/audio/Main Menu OST.mp3" id="12_flqon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
@@ -102,7 +102,7 @@ texture = ExtResource("8_5dd4i")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hl5e0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
-texture = ExtResource("10_lgwnu")
+texture = ExtResource("11_rcqid")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyero"]
 

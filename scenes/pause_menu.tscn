@@ -1,21 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://3dbhh8np2x50"]
+[gd_scene load_steps=7 format=3 uid="uid://b8t703ammwdme"]
 
-[ext_resource type="Script" uid="uid://s78nnflf40c6" path="res://scenes/pause_menu.gd" id="1_5d2l8"]
-[ext_resource type="Texture2D" uid="uid://c38q7h2g7c7wa" path="res://pause/Pause menuu.png" id="2_7l7mv"]
-[ext_resource type="Script" uid="uid://c70okqig5vgif" path="res://scenes/settings_menu.gd" id="3_v4r4p"]
-[ext_resource type="Texture2D" uid="uid://dqwrmy0gpp00p" path="res://pause/settings.png" id="4_1s2dm"]
-[ext_resource type="Texture2D" uid="uid://degdd17yt0600" path="res://pause/Pause button.png" id="5_7l7mv"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://cao1qu4s2a07y" path="res://assets/pause/Pause menuu.png" id="2_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://deksecki1jnwu" path="res://assets/pause/Pause button.png" id="2_v4r4p"]
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="3_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://cl4c44falhnpy" path="res://assets/main menu/settings.png" id="5_v4r4p"]
 [ext_resource type="AudioStream" uid="uid://7gthe7vaxmte" path="res://assets/audio/Main Menu OST.mp3" id="6_v4r4p"]
 
 [node name="pause_menu" type="CanvasLayer"]
 script = ExtResource("1_5d2l8")
 
 [node name="PauseButton" type="TextureButton" parent="."]
-offset_left = 5.0
-offset_top = -3.0
-offset_right = 1159.0
-offset_bottom = 630.0
-texture_normal = ExtResource("5_7l7mv")
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 1167.0
+offset_bottom = 643.0
+texture_normal = ExtResource("2_v4r4p")
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
@@ -79,7 +79,7 @@ offset_left = -5.0
 offset_top = -2.0
 offset_right = 1175.0
 offset_bottom = 647.0
-texture = ExtResource("4_1s2dm")
+texture = ExtResource("5_v4r4p")
 
 [node name="MusicVolume" type="Label" parent="SettingsMenu"]
 layout_mode = 0
@@ -102,12 +102,13 @@ offset_left = 293.0
 offset_top = 59.0
 offset_right = 867.0
 offset_bottom = 552.0
+value = 100.0
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="BackgroundOST" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_v4r4p")
-volume_db = -16.0
+volume_db = -80.0
 autoplay = true
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

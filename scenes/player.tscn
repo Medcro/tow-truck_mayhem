@@ -1,15 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://rni2yfyra013"]
+[gd_scene load_steps=17 format=3 uid="uid://rni2yfyra013"]
 
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_fjrip"]
 [ext_resource type="PackedScene" uid="uid://csnmve3v1a6yc" path="res://scenes/car.tscn" id="2_qhqgy"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_qhqgy"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_smehm"]
+[ext_resource type="Script" uid="uid://cx8fywn5oyhow" path="res://scripts/hurtbox.gd" id="3_smehm"]
 [ext_resource type="AudioStream" uid="uid://l8r4jk2qrknf" path="res://assets/audio/Engine Driving SFX.mp3" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="5_y4r1p"]
-[ext_resource type="Script" uid="uid://kosfidsx3mvm" path="res://scripts/HealthBar.gd" id="11_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://cl54b5soss3ry" path="res://assets/HealthBar.png" id="12_jej6c"]
-[ext_resource type="Texture2D" uid="uid://bhhncvt2ovsi1" path="res://assets/HealthBarProgress.png" id="13_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://dwo34n5pghue7" path="res://assets/full_health.tres" id="8_smehm"]
+[ext_resource type="Script" path="res://scripts/HeartHealthUI.gd" id="8_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://jnrfai6s1pd1" path="res://assets/empty-hearth.tres" id="10_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://cgrnryxgd87yo" path="res://assets/audio/Car Crash SFX.mp3" id="11_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://ujkuqk1jy776" path="res://assets/HealthBar.png" id="12_jej6c"]
+[ext_resource type="Texture2D" uid="uid://3o4h7o3w4qwc" path="res://assets/HealthBarProgress.png" id="13_f1ej7"]
+[ext_resource type="Script" uid="uid://db3mb4u57tqsf" path="res://scripts/health_bar.gd" id="13_oprun"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
 radius = 13.0
@@ -84,20 +88,58 @@ metadata/_custom_type_script = "uid://wopay8ms6ewt"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
+visible = false
+offset_right = 397.0
+offset_bottom = 62.0
+theme_override_constants/separation = 20
+script = ExtResource("8_ur7pv")
+health_component = NodePath("../../Health")
+full_heart_texture = ExtResource("8_smehm")
+empty_heart_texture = ExtResource("10_y4r1p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_smehm")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
-offset_left = -112.0
-offset_top = -169.0
-offset_right = 602.0
-offset_bottom = 101.0
-max_value = 80.0
-value = 80.0
-nine_patch_stretch = true
-stretch_margin_right = 1
+offset_left = -15.0
+offset_top = -192.0
+offset_right = 465.0
+offset_bottom = 78.0
+scale = Vector2(1.1688404, 1.0199345)
+step = 0.0
+value = 100.0
 texture_under = ExtResource("12_jej6c")
 texture_progress = ExtResource("13_f1ej7")
-script = ExtResource("11_d2wvv")
+script = ExtResource("13_oprun")
 health_component = NodePath("../../Health")
-metadata/_edit_use_anchors_ = true
 
 [node name="Car_Crash_SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_d2wvv")

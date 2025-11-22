@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	# if the checkpoint is inside the screen
 	if screen_inset_rectangle.has_point(screen_coordinates):
 		target_display_position = target_global_position + on_screen_offset
-		target_display_rotation = 0.0 # Reset rotation (point up/default).
+		target_display_rotation = PI # Reset rotation (point up/default).
 	else: # if the target is outside the screen
 		# clamp the X and Y to ensure they stay within the screen margins.
 		var clamped_x = clamp(screen_coordinates.x, screen_margin, viewport_dimensions.x - screen_margin)
@@ -45,8 +45,8 @@ func _process(delta: float) -> void:
 		
 		# calculate rotation
 		var vector_to_target: Vector2 = target_global_position - target_display_position
-		target_display_rotation = vector_to_target.angle() - PI * 0.5
+		target_display_rotation = vector_to_target.angle() + PI * 0.5
 	
 	# move and rotate the sprite gradually towards the new calculation.
 	global_position = lerp(global_position, target_display_position, delta * smoothing_speed)
-	rotation = lerp(rotation, target_display_rotation, delta * smoothing_speed)
+	rotation = lerp_angle(rotation, target_display_rotation, delta * smoothing_speed)

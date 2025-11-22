@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3o4h7o3w4qwc"
-path="res://.godot/imported/HealthBarProgress.png-36ad0ec71b6a49c2624bcd10df87cfc0.ctex"
+uid="uid://deksecki1jnwu"
+path="res://.godot/imported/Pause button.png-42582f3902891b2f3a986989b507389c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HealthBarProgress.png"
-dest_files=["res://.godot/imported/HealthBarProgress.png-36ad0ec71b6a49c2624bcd10df87cfc0.ctex"]
+source_file="res://assets/pause/Pause button.png"
+dest_files=["res://.godot/imported/Pause button.png-42582f3902891b2f3a986989b507389c.ctex"]
 
 [params]
 

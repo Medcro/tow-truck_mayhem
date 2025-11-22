@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://sjosjoav32e4"]
+[gd_scene load_steps=4 format=3 uid="uid://bamqpeedcs01x"]
 
 [ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="1_u8cmh"]
-[ext_resource type="Script" uid="uid://855vywdfkg52" path="res://scripts/collision.gd" id="1_w2vs5"]
+[ext_resource type="Script" path="res://scripts/collision.gd" id="1_w2vs5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2vs5"]
 radius = 29.0
