@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=12 format=3 uid="uid://7qfqg006l7ij"]
 
 [ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_sugp2"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_tipki"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bxt85dgajr42e" path="res://scenes/game_over_manager.tscn" id="5_tefeu"]
 [ext_resource type="AudioStream" uid="uid://dqgese56bc37t" path="res://assets/audio/Level Start SFX.mp3" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://b8t703ammwdme" path="res://scenes/pause_menu.tscn" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://c7e2nmxtt8i0p" path="res://scenes/checkpoint.gd" id="9_choun"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ya4ey"]
+radius = 157.86703
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tipki")
@@ -20,12 +24,6 @@ texture = ExtResource("1_sugp2")
 
 [node name="Car" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(1195, 106)
-
-[node name="WaypointMarker" parent="Car" instance=ExtResource("3_tefeu")]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(0, -94)
-on_screen_offset = Vector2(0.5, -100)
-screen_margin = 50.0
 
 [node name="Player" parent="." instance=ExtResource("4_tbgi4")]
 
@@ -40,3 +38,18 @@ screen_margin = 50.0
 [node name="LevelStartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_85g3d")
 volume_db = -10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1486, -270)
+script = ExtResource("9_choun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ya4ey")
+
+[node name="WaypointMarker" parent="Area2D" instance=ExtResource("3_tefeu")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-291, 282)
+on_screen_offset = Vector2(0.5, -100)
+screen_margin = 50.0
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
