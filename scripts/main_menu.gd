@@ -46,7 +46,7 @@ func close_panel() -> void:
 # Button handlers
 func _on_start_pressed() -> void:
 	play_button_sound()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_option_pressed() -> void:
 	show_panel(settings)

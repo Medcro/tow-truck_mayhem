@@ -15,6 +15,11 @@ run/main_scene="uid://1rpounk3wmy0"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelCore="*res://scripts/level_core.gd"
+AudioControl="*res://scripts/audio_control.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
