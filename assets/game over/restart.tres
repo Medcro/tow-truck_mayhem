@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b6ny1mnowrusp"]
+
+[ext_resource type="Texture2D" uid="uid://dcmoqtsqc44kx" path="res://assets/game over/Restart hover.png" id="1_cqx35"]
+
+[resource]
+atlas = ExtResource("1_cqx35")
+region = Rect2(129.72736, 167.2728, 96.36368, 36.363647)

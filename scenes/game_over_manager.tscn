@@ -1,20 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo3lxy34ofe65"]
+[gd_scene load_steps=15 format=3 uid="uid://bo3lxy34ofe65"]
 
 [ext_resource type="Script" uid="uid://xn6i3miaq2ep" path="res://scripts/game_over_manager.gd" id="1_kbllt"]
+[ext_resource type="Texture2D" uid="uid://cd5g77evst8iv" path="res://assets/game over/Game over screen.png" id="2_fisn8"]
 [ext_resource type="AudioStream" uid="uid://dtot4leyjyx5k" path="res://assets/audio/Explosion SFX.mp3" id="2_wbsog"]
+[ext_resource type="Texture2D" uid="uid://b6ny1mnowrusp" path="res://assets/game over/restart.tres" id="3_jl7wn"]
+[ext_resource type="Texture2D" uid="uid://ce1d5emhtg6bt" path="res://assets/game over/back.tres" id="4_m2rfc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2u06"]
+texture = ExtResource("2_fisn8")
+region_rect = Rect2(81, 28.5, 315, 210)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ll2p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbsog"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u8u7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wxf5"]
+texture = ExtResource("3_jl7wn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upoeb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dprm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sblfx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gt3xq"]
+texture = ExtResource("4_m2rfc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u8u7"]
 
 [node name="GameOverManager" type="Node"]
 script = ExtResource("1_kbllt")
 
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,29 +44,33 @@ offset_right = 261.625
 offset_bottom = 197.125
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_c2u06")
 
 [node name="Restart" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 62.625
-offset_top = 242.125
-offset_right = 200.625
-offset_bottom = 335.125
+offset_left = 80.625
+offset_top = 261.125
+offset_right = 240.625
+offset_bottom = 329.125
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ll2p")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbsog")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u8u7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7wxf5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_upoeb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dprm")
-text = "Restart
+text = "
 "
 
 [node name="Back" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 336.625
-offset_top = 243.125
-offset_right = 474.625
-offset_bottom = 336.125
+offset_left = 277.625
+offset_top = 249.125
+offset_right = 457.625
+offset_bottom = 322.125
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sblfx")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbsog")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gt3xq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u8u7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dprm")
-text = "Back"
 
 [node name="Explosion" type="AudioStreamPlayer" parent="."]
 process_mode = 3
