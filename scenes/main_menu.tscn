@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://1y6o4120u736" path="res://assets/main menu/main menu_hover credits.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://8jcdhk17jxse" path="res://assets/main menu/main menu_hover exit.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://cl4c44falhnpy" path="res://assets/main menu/settings.png" id="7_jk1qb"]
-[ext_resource type="Script" path="res://scripts/audio_control.gd" id="7_oa1go"]
+[ext_resource type="Script" uid="uid://bfn7wdj841acu" path="res://scripts/audio_control.gd" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://cijy3gf1tu2xe" path="res://assets/main menu/Are_u_sure...png" id="8_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="8_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://d1rmcd6mytmjt" path="res://assets/main menu/Credits new.png" id="10_lgwnu"]
