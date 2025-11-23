@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://rni2yfyra013"]
+[gd_scene load_steps=19 format=3 uid="uid://rni2yfyra013"]
 
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_fjrip"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cx8fywn5oyhow" path="res://scripts/hurtbox.gd" id="3_smehm"]
 [ext_resource type="AudioStream" uid="uid://l8r4jk2qrknf" path="res://assets/audio/Engine Driving SFX.mp3" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="5_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://dut3s6lfaibp7" path="res://assets/audio/Low HP SFX.mp3" id="8_oprun"]
 [ext_resource type="Texture2D" uid="uid://dwo34n5pghue7" path="res://assets/full_health.tres" id="8_smehm"]
 [ext_resource type="Script" path="res://scripts/HeartHealthUI.gd" id="8_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://jnrfai6s1pd1" path="res://assets/empty-hearth.tres" id="10_y4r1p"]
@@ -88,6 +89,11 @@ angular_limit_upper = -2.0943952
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_qhqgy")
+
+[node name="LowHealthSFX" type="AudioStreamPlayer" parent="Health"]
+process_mode = 3
+stream = ExtResource("8_oprun")
+volume_db = -12.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
