@@ -154,7 +154,9 @@ offset_top = 275.0
 offset_right = 867.0
 offset_bottom = 324.0
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_1s2dm")
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="TextureRect2" type="TextureRect" parent="SettingsMenu"]
 layout_mode = 1
@@ -175,7 +177,9 @@ offset_top = 486.0
 offset_right = 734.0
 offset_bottom = 551.0
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_88e76")
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="ConfirmationRetry" type="Panel" parent="."]
 process_mode = 3

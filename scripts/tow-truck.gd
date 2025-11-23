@@ -36,10 +36,8 @@ func _physics_process(delta: float):
 	velocity += acceleration * delta
 	move_and_slide()
 
-# MODIFIED: Handles user input vs Automatic braking
 func get_input():
 	if input_enabled:
-		# --- NORMAL DRIVING ---
 		var turn: int = 0
 		if Input.is_action_pressed("steer_left"):
 			turn -= 1
@@ -54,20 +52,14 @@ func get_input():
 			acceleration = transform.x * braking_power
 			
 	else:
-		# --- CHECKPOINT REACHED (AUTO-STOP) ---
-		# 1. Stop turning so we brake in a straight line
 		steer_direction = 0.0 
-		
-		# 2. If we are still moving, apply the brakes programmatically
 		if velocity.length() > 10:
-			# Use your existing braking_power variable
 			acceleration = transform.x * braking_power 
 		else:
 			# If very slow, snap to zero to prevent sliding forever
 			velocity = Vector2.ZERO
-			sfx_drive.stop() # Kill the engine sound
+			sfx_drive.stop()
 
-# ... (Keep calculate_steering, apply_friction, and handleSound exactly as they were) ...
 func calculate_steering(delta: float):
 	# determined the position of the front wheel and the rear wheel
 	var rear_wheel: Vector2 = global_position - transform.x * wheel_base / 2.0

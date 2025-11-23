@@ -234,7 +234,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_oa1go")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oa1go")
 max_value = 1.0
 step = 0.05
-value = 1.0
+value = 0.5
 
 [node name="TextureRect" type="TextureRect" parent="Settings"]
 layout_mode = 0
@@ -250,6 +250,9 @@ offset_left = 261.0
 offset_top = 444.5
 offset_right = 524.0
 offset_bottom = 460.5
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="ConfirmationExit" type="Panel" parent="."]
 visible = false
@@ -291,7 +294,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_hl5e0")
 
 [node name="ButtonPressed_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_tbmy8")
-volume_db = -9.0
+volume_db = -32.0
 bus = &"SFX"
 
 [node name="CreditsPanel" type="Panel" parent="."]

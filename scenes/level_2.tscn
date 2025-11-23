@@ -47,7 +47,7 @@ position = Vector2(0, 46)
 
 [node name="LevelStartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_172wr")
-volume_db = -10.0
+volume_db = -32.0
 bus = &"SFX"
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_g2hoc")]
@@ -62,5 +62,5 @@ bus = &"Music"
 [node name="GameplayOST_start" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("10_hey2k")
-volume_db = -16.0
+volume_db = -56.0
 bus = &"Music"
