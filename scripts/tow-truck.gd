@@ -4,24 +4,26 @@ extends CharacterBody2D
 @onready var sfx_drive: AudioStreamPlayer2D = $sfx_engine
 
 # Vehicle Tuning Properties
-@export var wheel_base: float = 70.0 # how far apart the two wheelsc
-@export var steering_angle: float = 15.0 # how far the front wheel turn
-@export var engine_power: float = 800.0 # add force to speed
-@export var braking_power: float = -450.0 # reduce speed
-@export var max_speed_reversed: float = 250.0 # maximum speed when the truck reversed
-@export var friction: float = -0.9 # Applied friction opposite to velocity
-@export var drag: float = -0.001 # Applied based on velocity squared, like wind
-@export var slip_speed: float = 400.0 # Speed at which traction is reduced
-@export var traction_fast: float = 0.1 # "Slippy" traction at high speed
-@export var traction_slow: float = 0.7 # "Grippy" traction at low speed
+@export var wheel_base: float = 70.0 
+@export var steering_angle: float = 15.0 
+@export var engine_power: float = 800.0 
+@export var braking_power: float = -450.0 
+@export var max_speed_reversed: float = 250.0 
+@export var friction: float = -0.9 
+@export var drag: float = -0.001 
+@export var slip_speed: float = 400.0 
+@export var traction_fast: float = 0.1 
+@export var traction_slow: float = 0.7 
+
+# NEW: Control switch
+var input_enabled: bool = true
 
 var acceleration: Vector2 = Vector2.ZERO
-var steer_direction: float = 0.0 # the direction that we turning in -/+
+var steer_direction: float = 0.0 
 
 func _ready():
 	sfx_drive.play()
 	
-# function to handle physics process of the truck (get called 60 times per second)
 func _physics_process(delta: float):
 	handleSound()
 	
@@ -34,22 +36,38 @@ func _physics_process(delta: float):
 	velocity += acceleration * delta
 	move_and_slide()
 
-# a function to handle user input
+# MODIFIED: Handles user input vs Automatic braking
 func get_input():
-	var turn: int = 0
-	if Input.is_action_pressed("steer_left"):
-		turn -= 1
-	if Input.is_action_pressed("steer_right"):
-		turn += 1
+	if input_enabled:
+		# --- NORMAL DRIVING ---
+		var turn: int = 0
+		if Input.is_action_pressed("steer_left"):
+			turn -= 1
+		if Input.is_action_pressed("steer_right"):
+			turn += 1
 
-	steer_direction = turn * deg_to_rad(steering_angle)
+		steer_direction = turn * deg_to_rad(steering_angle)
 
-	if Input.is_action_pressed("accelerate"):
-		acceleration = transform.x * engine_power
-	if Input.is_action_pressed("brake"):
-		acceleration = transform.x * braking_power
+		if Input.is_action_pressed("accelerate"):
+			acceleration = transform.x * engine_power
+		if Input.is_action_pressed("brake"):
+			acceleration = transform.x * braking_power
+			
+	else:
+		# --- CHECKPOINT REACHED (AUTO-STOP) ---
+		# 1. Stop turning so we brake in a straight line
+		steer_direction = 0.0 
 		
-# the main function to calculate the steering logic
+		# 2. If we are still moving, apply the brakes programmatically
+		if velocity.length() > 10:
+			# Use your existing braking_power variable
+			acceleration = transform.x * braking_power 
+		else:
+			# If very slow, snap to zero to prevent sliding forever
+			velocity = Vector2.ZERO
+			sfx_drive.stop() # Kill the engine sound
+
+# ... (Keep calculate_steering, apply_friction, and handleSound exactly as they were) ...
 func calculate_steering(delta: float):
 	# determined the position of the front wheel and the rear wheel
 	var rear_wheel: Vector2 = global_position - transform.x * wheel_base / 2.0
@@ -76,7 +94,6 @@ func calculate_steering(delta: float):
 	# rotate the sprite of the truck
 	rotation = new_heading.angle()
 
-# a function to calculate and apply the friction	
 func apply_friction():
 	if velocity.length() < 5:
 		velocity = Vector2.ZERO
@@ -86,7 +103,6 @@ func apply_friction():
 	
 	acceleration += drag_force + friction_force
 
-# Adjusts the driving sound effect pitch based on the vehicle's velocity.
 func handleSound():
 	var newVal = (velocity.length() / 250) + 0.5
 	sfx_drive.set_pitch_scale(newVal)

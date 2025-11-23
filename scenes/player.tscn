@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://rni2yfyra013"]
+[gd_scene load_steps=18 format=3 uid="uid://rni2yfyra013"]
 
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_fjrip"]
@@ -13,17 +13,21 @@
 [ext_resource type="AudioStream" uid="uid://cgrnryxgd87yo" path="res://assets/audio/Car Crash SFX.mp3" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://ujkuqk1jy776" path="res://assets/HealthBar.png" id="12_jej6c"]
 [ext_resource type="Texture2D" uid="uid://3o4h7o3w4qwc" path="res://assets/HealthBarProgress.png" id="13_f1ej7"]
-[ext_resource type="Script" uid="uid://db3mb4u57tqsf" path="res://scripts/health_bar.gd" id="13_oprun"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="13_oprun"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
 radius = 13.0
 height = 68.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1ej7"]
+radius = 13.812149
+height = 68.26245
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
 radius = 26.0
 height = 132.0
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Player"]]
 
 [node name="Tow-Truck" parent="." instance=ExtResource("1_g2els")]
 position = Vector2(146, -3)
@@ -46,10 +50,10 @@ script = ExtResource("3_smehm")
 health = NodePath("../../Health")
 
 [node name="HurtboxArea" type="CollisionShape2D" parent="Tow-Truck/Hurtbox"]
-position = Vector2(1, -1)
+position = Vector2(3.0222473, 0.3502643)
 rotation = 1.5811385
 scale = Vector2(2.4338822, 2.607293)
-shape = SubResource("CapsuleShape2D_fjrip")
+shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="sfx_engine2" type="AudioStreamPlayer2D" parent="Tow-Truck"]
 stream = ExtResource("4_ur7pv")
@@ -84,7 +88,6 @@ angular_limit_upper = -2.0943952
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_qhqgy")
-metadata/_custom_type_script = "uid://wopay8ms6ewt"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

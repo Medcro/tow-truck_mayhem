@@ -24,6 +24,10 @@ AudioControl="*res://scripts/audio_control.gd"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+Player=""
+
 [input]
 
 steer_right={
