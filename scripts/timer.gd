@@ -8,8 +8,10 @@ signal time_low
 @onready var label: Label = $Label 
 @onready var timer: Timer = $Timer 
 @onready var low_timer_sfx: AudioStreamPlayer = $LowTimerSFX
+@export var time: int
 
 func _ready():
+	timer.wait_time = time
 	timer.start()  # Starts the countdown timer
 
 # function to calculate time remaining

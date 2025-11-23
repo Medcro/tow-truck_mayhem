@@ -42,6 +42,7 @@ position = Vector2(0, 46)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("4_cp0rv")]
+time = 90
 
 [node name="GameOverManager" parent="CanvasLayer" instance=ExtResource("5_rr1tt")]
 

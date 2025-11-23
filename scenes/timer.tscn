@@ -5,6 +5,7 @@
 
 [node name="Timer" type="Node"]
 script = ExtResource("1_srplv")
+time = 60
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 1
@@ -13,11 +14,11 @@ anchor_right = 1.0
 offset_left = -72.0
 offset_bottom = 39.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 44
 text = "00:00"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 60.0
 one_shot = true
 
 [node name="LowTimerSFX" type="AudioStreamPlayer" parent="."]
