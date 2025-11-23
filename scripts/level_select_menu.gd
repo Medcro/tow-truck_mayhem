@@ -141,6 +141,14 @@ func _on_accept_level_5() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_5.tscn")
 
 func _on_button_pressed() -> void:
-	print("button pressed")
 	button_pressed_sfx.play()
-	
+
+func _on_back_pressed() -> void:
+	button_pressed_sfx.play()
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_back_desc_pressed() -> void:
+	button_pressed_sfx.play()
+	hide_all_description()
+	panel.visible = true

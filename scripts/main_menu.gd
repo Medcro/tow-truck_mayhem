@@ -47,7 +47,7 @@ func close_panel() -> void:
 # Button handlers
 func _on_start_pressed() -> void:
 	play_button_sound()
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_option_pressed() -> void:

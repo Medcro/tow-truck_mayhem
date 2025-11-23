@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://cf12xqt1yrplj"]
+[gd_scene load_steps=30 format=3 uid="uid://cf12xqt1yrplj"]
 
-[ext_resource type="Texture2D" uid="uid://w7gn0xvhloll" path="res://assets/select level/start_screen.png" id="1_3shnc"]
 [ext_resource type="Script" uid="uid://ccwyeqrbgthe2" path="res://scripts/level_select_menu.gd" id="1_p0wlc"]
-[ext_resource type="Texture2D" uid="uid://ddah2vpgj6dne" path="res://assets/select level/level_description.png" id="3_2epne"]
+[ext_resource type="Texture2D" uid="uid://bwand54uylphw" path="res://assets/select level/level select with back.png" id="2_rif6e"]
+[ext_resource type="Texture2D" uid="uid://dgd44xe5atjif" path="res://assets/select level/level start with back.png" id="3_chg43"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="4_rif6e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0wlc"]
-texture = ExtResource("1_3shnc")
+texture = ExtResource("2_rif6e")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6tf7"]
 
@@ -34,8 +34,18 @@ texture = ExtResource("1_3shnc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rif6e"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxici"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thf6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f86jd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_317l6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ichcy"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rif6e"]
-texture = ExtResource("3_2epne")
+texture = ExtResource("3_chg43")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4mbh"]
 
@@ -286,6 +296,18 @@ text = "5. Lovey-Dovey Crash!
 "
 alignment = 0
 
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
 [node name="Level0Description" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -375,6 +397,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level0Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
 
 [node name="Level1Description" type="Panel" parent="."]
 visible = false
@@ -466,6 +500,18 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
 
+[node name="Back" type="Button" parent="Level1Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
 [node name="Level2Description" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -555,6 +601,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level2Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
 
 [node name="Level3Description" type="Panel" parent="."]
 visible = false
@@ -646,6 +704,18 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
 
+[node name="Back" type="Button" parent="Level3Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
 [node name="Level4Description" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -735,6 +805,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level4Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
 
 [node name="Level5Description" type="Panel" parent="."]
 visible = false
@@ -826,6 +908,18 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
 
+[node name="Back" type="Button" parent="Level5Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
 [node name="ButtonPressed_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rif6e")
 volume_db = -4.0
@@ -842,32 +936,39 @@ volume_db = -4.0
 [connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_accept_level_0"]
 [connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level0Description/Back" to="." method="_on_back_desc_pressed"]
 [connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept_level_1"]
 [connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level1Description/Back" to="." method="_on_back_desc_pressed"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept_level_2"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level2Description/Back" to="." method="_on_back_desc_pressed"]
 [connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept_level_3"]
 [connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Level3Description/Back" to="." method="_on_back_desc_pressed"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept_level_4"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level4Description/Back" to="." method="_on_back_desc_pressed"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept_level_5"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level5Description/Back" to="." method="_on_back_desc_pressed"]
