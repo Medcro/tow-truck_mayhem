@@ -3,10 +3,12 @@ extends CanvasLayer
 @onready var pause_menu = $PauseMenu
 @onready var settings_menu = $SettingsMenu
 @onready var click_sound = $ClickSound  
+@onready var confirmation_retry: Panel = $ConfirmationRetry
 
 func _ready():
 	pause_menu.visible = false
 	settings_menu.visible = false
+	confirmation_retry.visible = false
 
 func _on_pause_button_pressed() -> void:	
 	if click_sound:
@@ -38,9 +40,19 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_retry_pressed() -> void:
-	get_tree().reload_current_scene()
+	if click_sound:
+		click_sound.play()
+	pause_menu.visible = false
+	confirmation_retry.visible = true
 
 func _on_back_button_pressed() -> void:
 	get_node("PauseMenu").visible = true
 	get_node("SettingsMenu/BackButton").visible = false
-	print("button clicked")
+
+func _on_yes_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_no_pressed() -> void:
+	pause_menu.visible = true
+	confirmation_retry.visible = false
