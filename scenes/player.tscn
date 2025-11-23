@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://scripts/HeartHealthUI.gd" id="8_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://jnrfai6s1pd1" path="res://assets/empty-hearth.tres" id="10_y4r1p"]
 [ext_resource type="AudioStream" uid="uid://cgrnryxgd87yo" path="res://assets/audio/Car Crash SFX.mp3" id="11_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://ujkuqk1jy776" path="res://assets/HealthBar.png" id="12_jej6c"]
-[ext_resource type="Texture2D" uid="uid://3o4h7o3w4qwc" path="res://assets/HealthBarProgress.png" id="13_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://dg5778koj041t" path="res://assets/healthbar.tres" id="12_oprun"]
+[ext_resource type="Texture2D" uid="uid://cc2lf4lqa5ooy" path="res://assets/progressbar.tres" id="13_a8ls1"]
 [ext_resource type="Script" uid="uid://db3mb4u57tqsf" path="res://scripts/health_bar.gd" id="13_oprun"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
@@ -138,15 +138,15 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
-offset_left = -15.0
-offset_top = -192.0
-offset_right = 465.0
-offset_bottom = 78.0
+offset_left = 74.0
+offset_top = -1.0
+offset_right = 554.0
+offset_bottom = 269.0
 scale = Vector2(1.1688404, 1.0199345)
 step = 0.0
 value = 100.0
-texture_under = ExtResource("12_jej6c")
-texture_progress = ExtResource("13_f1ej7")
+texture_under = ExtResource("12_oprun")
+texture_progress = ExtResource("13_a8ls1")
 script = ExtResource("13_oprun")
 health_component = NodePath("../../Health")
 
