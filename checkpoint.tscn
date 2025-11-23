@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfg7gsxlcq27n"]
+
+[ext_resource type="Texture2D" uid="uid://8d10nul8adj6" path="res://icon.svg" id="1_vsimk"]
+[ext_resource type="Script" uid="uid://cjdr1yphfoo4b" path="res://checkpoint.gd" id="2_vsimk"]
+[ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="3_vsimk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsimk"]
+size = Vector2(203.25, 1025)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(777, 118)
+scale = Vector2(25.343748, 15.46875)
+texture = ExtResource("1_vsimk")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(711, 206)
+script = ExtResource("2_vsimk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1456, -73.5)
+shape = SubResource("RectangleShape2D_vsimk")
+
+[node name="Player" parent="." instance=ExtResource("3_vsimk")]
+position = Vector2(215, 203)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
