@@ -48,4 +48,4 @@ stream = ExtResource("6_ax3dk")
 volume_db = -10.0
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_q2dsb")]
-position = Vector2(3094, 24)
+position = Vector2(6858, 4451)

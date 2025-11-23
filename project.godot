@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelCore="*res://scripts/level_core.gd"
 GlobalSettings="*res://scripts/global_settings.gd"
+AudioPlayer="*res://scripts/audio_player.gd"
 
 [display]
 

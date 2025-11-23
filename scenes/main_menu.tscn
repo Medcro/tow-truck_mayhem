@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://1rpounk3wmy0"]
+[gd_scene load_steps=57 format=3 uid="uid://1rpounk3wmy0"]
 
 [ext_resource type="Texture2D" uid="uid://yofyn3a1gj6g" path="res://assets/main menu/main menu_fixed lineart.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bswjx2ihgaeg4" path="res://scripts/main_menu.gd" id="1_rtw2f"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="8_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://b5bal7pygeta2" path="res://assets/main menu/x_button.tres" id="11_flqon"]
 [ext_resource type="Texture2D" uid="uid://bx2dnycqys5iw" path="res://assets/main menu/Unwashed Credits.png" id="11_rcqid"]
-[ext_resource type="AudioStream" uid="uid://7gthe7vaxmte" path="res://assets/audio/Main Menu OST.mp3" id="12_flqon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("1_l6cm7")
@@ -308,11 +307,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_4puye")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6vcge")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ip0br")
 icon = ExtResource("11_flqon")
-
-[node name="BackgroundOST" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_flqon")
-volume_db = -16.0
-autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]

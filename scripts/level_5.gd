@@ -9,6 +9,6 @@ func _ready() -> void:
 		checkpoint_node.checkpoint_activated.connect(_on_checkpoint_activated)
 	level_start_sfx.play()
 
-func _on_checkpoint_activated(position: Vector2):
+func _on_checkpoint_activated():
 	player.input_enabled = false
 	LevelCore.lvl5_completed = true

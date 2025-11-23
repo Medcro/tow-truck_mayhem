@@ -2,7 +2,7 @@ extends Node2D
 class_name Checkpoint
 
 var activated := false
-signal checkpoint_activated(position: Vector2)
+signal checkpoint_activated
 
 @onready var detection_area: Area2D = $Area2D
 @onready var winning_sfx: AudioStreamPlayer = $WinningSfx
@@ -14,7 +14,6 @@ signal checkpoint_activated(position: Vector2)
 
 func _ready() -> void:
 	detection_area.body_entered.connect(_on_body_entered)
-	
 	queue_redraw()
 
 func _draw():
@@ -30,9 +29,8 @@ func _draw():
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Tow-Truck" or body.name == "Car") and not activated:
-		print("Level Finished!")
 		activated = true
 		winning_sfx.play()
-		checkpoint_activated.emit(global_position)
+		checkpoint_activated.emit()
 		await get_tree().create_timer(2.5).timeout
 		get_tree().change_scene_to_file("res://scenes/level_select.tscn")

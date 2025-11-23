@@ -52,12 +52,13 @@ func _on_body_exited(body: Node2D):
 func take_damage(amount: int, body_source: Node2D):
 	if health.immortality:
 		return
-
+	
+	car_crash_sfx.play()
+	
 	health.health -= amount
 	hit_received.emit(amount, body_source)
 	
 	health.set_temporary_immortality(invincibility_duration)
-	car_crash_sfx.play()
 
 func _on_health_depleted() -> void:
 	emit_signal("player_lost")

@@ -13,7 +13,10 @@ var immortality_timer: Timer = null
 
 # initialized the entitiy's health
 @onready var health: int = max_health : set = set_health, get = get_health
+@onready var checkpoint_component : Checkpoint = $"../../Checkpoint"
 
+func _ready():
+	checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
 
 func set_max_health(value: int):
 	# ensure max health is always at least 1
@@ -74,3 +77,6 @@ func set_health(value: int):
 		
 func get_health():
 	return health
+
+func _on_checkpoint_activated():
+	set_temporary_immortality(0.5)

@@ -20,6 +20,7 @@ debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="Pointer" parent="." instance=ExtResource("2_ywqth")]
 on_screen_offset = Vector2(0.5, -170)
+screen_margin = 80.0
 
 [node name="WinningSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vsimk")

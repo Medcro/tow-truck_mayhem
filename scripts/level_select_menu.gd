@@ -14,6 +14,7 @@ extends Control
 
 
 @onready var panel: Panel = $Panel
+@onready var button_pressed_sfx: AudioStreamPlayer = $ButtonPressed_SFX
 
 @onready var level_0_description: Panel = $Level0Description
 @onready var level_1_description: Panel = $Level1Description
@@ -24,6 +25,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioPlayer.play_music_level()
 	set_level_1()
 	set_level_2()
 	set_level_3()
@@ -115,19 +117,30 @@ func _on_back_button_pressed() -> void:
 	_ready()
 
 func _on_accept_level_0() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_0.tscn")
 
 func _on_accept_level_1() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 
 func _on_accept_level_2() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 
 func _on_accept_level_3() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_3.tscn")
 	
 func _on_accept_level_4() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_4.tscn")
 
 func _on_accept_level_5() -> void:
+	AudioPlayer.stop_music()
 	get_tree().change_scene_to_file("res://scenes/level_5.tscn")
+
+func _on_button_pressed() -> void:
+	print("button pressed")
+	button_pressed_sfx.play()
+	
