@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dut3s6lfaibp7"
+path="res://.godot/imported/Low HP SFX.mp3-fae9e745fe3b53a3ffd8e503b7aaefb0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Low HP SFX.mp3"
+dest_files=["res://.godot/imported/Low HP SFX.mp3-fae9e745fe3b53a3ffd8e503b7aaefb0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

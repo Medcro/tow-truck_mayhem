@@ -3,5 +3,5 @@
 [ext_resource type="Script" uid="uid://bsh7oki4yelnv" path="res://scripts/audio_player.gd" id="1_6slsp"]
 
 [node name="BackgroundOST" type="AudioStreamPlayer"]
-volume_db = -8.0
+volume_db = -16.0
 script = ExtResource("1_6slsp")

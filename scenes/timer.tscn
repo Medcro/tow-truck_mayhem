@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wp3dtf2tgjc"]
+[gd_scene load_steps=3 format=3 uid="uid://wp3dtf2tgjc"]
 
 [ext_resource type="Script" uid="uid://uxr0hk706bfe" path="res://scripts/timer.gd" id="1_srplv"]
+[ext_resource type="AudioStream" uid="uid://61pgxqyw8r7s" path="res://assets/audio/Low Timer SFX.mp3" id="2_5lxq6"]
 
 [node name="Timer" type="Node"]
 script = ExtResource("1_srplv")
@@ -18,5 +19,10 @@ text = "00:00"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 120.0
 one_shot = true
+
+[node name="LowTimerSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_5lxq6")
+volume_db = -4.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
