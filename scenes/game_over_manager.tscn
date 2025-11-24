@@ -54,6 +54,7 @@ text = "Back"
 process_mode = 3
 stream = ExtResource("2_wbsog")
 volume_db = -14.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]

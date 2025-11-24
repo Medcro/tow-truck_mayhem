@@ -7,13 +7,14 @@ extends Control
 	$Exit
 ]
 
-@onready var settings: Panel = $Settings
+@onready var settings: Control = $Settings
 @onready var confirmation_exit: Panel = $ConfirmationExit
 @onready var credits_panel: Panel = $CreditsPanel
 @onready var button_sfx: AudioStreamPlayer = $ButtonPressed_SFX
 
 # Main menu's default state
 func _ready():
+	AudioPlayer.play_music_level()
 	set_buttons_enabled(true)
 	hide_all_panels()
 
@@ -33,7 +34,7 @@ func play_button_sound() -> void:
 	button_sfx.play()
 
 # Show a panel and disable main buttons
-func show_panel(panel: Panel) -> void:
+func show_panel(panel: Control) -> void:
 	play_button_sound()
 	set_buttons_enabled(false)
 	panel.visible = true
@@ -46,21 +47,24 @@ func close_panel() -> void:
 # Button handlers
 func _on_start_pressed() -> void:
 	play_button_sound()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_option_pressed() -> void:
-	show_panel(settings)
+	play_button_sound()
+	settings.visible = true
 
 func _on_credits_pressed() -> void:
 	play_button_sound()
 	credits_panel.visible = true
 
 func _on_exit_pressed() -> void:
+	play_button_sound()
 	show_panel(confirmation_exit)
 
 func _on_back_options_pressed() -> void:
 	play_button_sound()
-	close_panel()
+	settings.visible = false
 
 func _on_yes_pressed() -> void:
 	play_button_sound()

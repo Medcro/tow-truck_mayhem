@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dqm74bkiryaq0"]
+
+[ext_resource type="Texture2D" uid="uid://deksecki1jnwu" path="res://assets/pause/Pause button.png" id="1_p86mp"]
+
+[resource]
+atlas = ExtResource("1_p86mp")
+region = Rect2(11.932865, 13.724825, 36.497707, 38.235687)

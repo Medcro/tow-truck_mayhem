@@ -1,39 +1,30 @@
-[gd_scene load_steps=9 format=4 uid="uid://7qfqg006l7ij"]
+[gd_scene load_steps=3 format=3 uid="uid://cgbheulmqeda7"]
 
-[ext_resource type="Script" uid="uid://wn0i3g7bv8c1" path="res://scripts/GameManager.gd" id="1_tipki"]
-[ext_resource type="TileSet" uid="uid://dugf0i3e7mifh" path="res://scenes/tilemaps.tres" id="2_tipki"]
-[ext_resource type="PackedScene" uid="uid://dthkrlr4x3ypa" path="res://scenes/waypoint_marker.tscn" id="3_tefeu"]
-[ext_resource type="PackedScene" uid="uid://wp3dtf2tgjc" path="res://scenes/timer.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://sjosjoav32e4" path="res://scenes/collision.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://bo3lxy34ofe65" path="res://scenes/game_over_manager.tscn" id="5_tefeu"]
-[ext_resource type="AudioStream" uid="uid://dqgese56bc37t" path="res://assets/audio/Level Start SFX.mp3" id="8_85g3d"]
+[ext_resource type="Script" uid="uid://88cdirjfttse" path="res://scripts/video_controller.gd" id="1_0wfyh"]
+[ext_resource type="VideoStream" uid="uid://b1oni0dxxnnle" path="res://assets/Tow Truck Mayhem Opening Cutscene (1).ogv" id="1_o5qli"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_tipki")
+script = ExtResource("1_0wfyh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1417, -524)
-scale = Vector2(25.343748, 15.46875)
-texture = ExtResource("1_sugp2")
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(3.1550233, 32.24608)
+zoom = Vector2(0.6, 0.6)
 
-[node name="Car" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(1195, 106)
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -969.0
+offset_top = -542.0
+offset_right = 951.0
+offset_bottom = 538.0
+stream = ExtResource("1_o5qli")
+volume_db = -1.0000002
+autoplay = true
 
-[node name="WaypointMarker" parent="Car" instance=ExtResource("3_tefeu")]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(0, -94)
-on_screen_offset = Vector2(0.5, -100)
-screen_margin = 50.0
+[node name="Label" type="Label" parent="."]
+offset_left = -397.0
+offset_top = 455.0
+offset_right = 465.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 60
+text = "Double click \"space\" to skip "
 
-[node name="Player" parent="." instance=ExtResource("4_tbgi4")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-
-[node name="GameOverManager" parent="CanvasLayer" instance=ExtResource("5_tefeu")]
-
-[node name="LevelStartSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_85g3d")
-volume_db = -10.0
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

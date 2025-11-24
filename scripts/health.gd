@@ -13,7 +13,11 @@ var immortality_timer: Timer = null
 
 # initialized the entitiy's health
 @onready var health: int = max_health : set = set_health, get = get_health
+@onready var checkpoint_component : Checkpoint = $"../../Checkpoint"
+@onready var low_health_sfx: AudioStreamPlayer = $LowHealthSFX
 
+func _ready():
+	checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
 
 func set_max_health(value: int):
 	# ensure max health is always at least 1
@@ -68,9 +72,15 @@ func set_health(value: int):
 		health = value
 		health_changed.emit(difference)
 		
+		if health == 2:
+			low_health_sfx.play()
 		# emits the health_depleted signal
 		if health == 0:
+			low_health_sfx.stop()
 			health_depleted.emit()
 		
 func get_health():
 	return health
+
+func _on_checkpoint_activated():
+	set_temporary_immortality(0.5)

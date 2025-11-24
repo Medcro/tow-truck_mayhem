@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6qwgeqctstto"
+path="res://.godot/imported/Winning SFX.mp3-eb98e59bc71630cc23bb3c11cd66b047.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Winning SFX.mp3"
+dest_files=["res://.godot/imported/Winning SFX.mp3-eb98e59bc71630cc23bb3c11cd66b047.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
