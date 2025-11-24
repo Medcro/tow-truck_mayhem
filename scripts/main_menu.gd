@@ -51,6 +51,7 @@ func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_option_pressed() -> void:
+	play_button_sound()
 	settings.visible = true
 
 func _on_credits_pressed() -> void:
@@ -58,6 +59,7 @@ func _on_credits_pressed() -> void:
 	credits_panel.visible = true
 
 func _on_exit_pressed() -> void:
+	play_button_sound()
 	show_panel(confirmation_exit)
 
 func _on_back_options_pressed() -> void:

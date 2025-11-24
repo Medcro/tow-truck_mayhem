@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://1rpounk3wmy0"]
+[gd_scene load_steps=62 format=3 uid="uid://1rpounk3wmy0"]
 
 [ext_resource type="Texture2D" uid="uid://yofyn3a1gj6g" path="res://assets/main menu/main menu_fixed lineart.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bswjx2ihgaeg4" path="res://scripts/main_menu.gd" id="1_rtw2f"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c4b4jpw3eejnb" path="res://assets/main menu/Settings music - sfx volume revisi (1).png" id="7_rcqid"]
 [ext_resource type="Texture2D" uid="uid://cijy3gf1tu2xe" path="res://assets/main menu/Are_u_sure...png" id="8_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="8_tbmy8"]
+[ext_resource type="Texture2D" path="res://assets/main menu/Yes.tres" id="10_1ajci"]
+[ext_resource type="Texture2D" path="res://assets/main menu/No.tres" id="11_7b55j"]
 [ext_resource type="Texture2D" uid="uid://b5bal7pygeta2" path="res://assets/main menu/x_button.tres" id="11_flqon"]
 [ext_resource type="Texture2D" uid="uid://bx2dnycqys5iw" path="res://assets/main menu/Unwashed Credits.png" id="11_rcqid"]
 
@@ -96,7 +98,8 @@ texture = ExtResource("8_5dd4i")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b55j"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7ex8"]
+texture = ExtResource("10_1ajci")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dfpl"]
 
@@ -106,7 +109,8 @@ texture = ExtResource("8_5dd4i")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1acrt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr8o3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8gd2"]
+texture = ExtResource("11_7b55j")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a85y"]
 
@@ -282,7 +286,7 @@ offset_right = 519.0
 offset_bottom = 418.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5dd4i")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_8egab")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j7ex8")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dfpl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qywvv")
 
@@ -294,13 +298,13 @@ offset_right = 707.0
 offset_bottom = 410.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3wgol")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_1acrt")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vr8o3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a8gd2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_1a85y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hl5e0")
 
 [node name="ButtonPressed_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_tbmy8")
-volume_db = -32.0
+volume_db = -2.0
 bus = &"SFX"
 
 [node name="CreditsPanel" type="Panel" parent="."]
