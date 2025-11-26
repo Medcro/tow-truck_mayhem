@@ -1,0 +1,177 @@
+[gd_scene load_steps=5 format=3 uid="uid://biwl3t1inaovr"]
+
+[ext_resource type="Script" path="res://scripts/shop_menu.gd" id="1_uj65v"]
+[ext_resource type="Script" path="res://scripts/customitazion.gd" id="2_76m3e"]
+[ext_resource type="Texture2D" path="res://assets/cars/truck/tow_truck.tres" id="3_cql4u"]
+[ext_resource type="Texture2D" path="res://assets/cars/cars/car.tres" id="4_xw4en"]
+
+[node name="ShopMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uj65v")
+
+[node name="Shop" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buy" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 290.0
+offset_right = 783.0
+offset_bottom = 362.0
+text = "Buy"
+
+[node name="Buy2" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 276.0
+offset_right = 225.0
+offset_bottom = 348.0
+text = "Buy"
+
+[node name="Buy3" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 283.0
+offset_right = 509.0
+offset_bottom = 355.0
+text = "Buy"
+
+[node name="Currency" type="Label" parent="Shop"]
+layout_mode = 0
+offset_right = 206.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 32
+text = "100$"
+
+[node name="Customitazion" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_76m3e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Customitazion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -133.0
+offset_right = 113.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Customitazion/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tow-Truck: "
+
+[node name="TruckBack" type="Button" parent="Customitazion/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "<"
+
+[node name="TruckForw" type="Button" parent="Customitazion/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ">"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Customitazion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = 48.0
+offset_right = 114.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Customitazion/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Car: "
+
+[node name="CarBack" type="Button" parent="Customitazion/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "<"
+
+[node name="CarForw" type="Button" parent="Customitazion/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ">"
+
+[node name="Control" type="Control" parent="Customitazion"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tow-truck" type="TextureRect" parent="Customitazion/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 737.0
+offset_top = 152.0
+offset_right = 819.0
+offset_bottom = 331.0
+texture = ExtResource("3_cql4u")
+
+[node name="car" type="TextureRect" parent="Customitazion/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 740.0
+offset_top = 350.0
+offset_right = 817.0
+offset_bottom = 489.0
+texture = ExtResource("4_xw4en")
+
+[node name="save" type="Button" parent="Customitazion"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 525.0
+offset_top = 527.0
+offset_right = 569.0
+offset_bottom = 558.0
+scale = Vector2(3.4709272, 2.4429188)
+text = "Save"
+
+[node name="ChangeMode" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Mode"
+
+[connection signal="pressed" from="Shop/Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Shop/Buy2" to="." method="_on_buy_2_pressed"]
+[connection signal="pressed" from="Shop/Buy3" to="." method="_on_buy_3_pressed"]
+[connection signal="pressed" from="ChangeMode" to="." method="_on_change_mode_pressed"]
