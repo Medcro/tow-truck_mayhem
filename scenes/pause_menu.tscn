@@ -1,14 +1,14 @@
 [gd_scene load_steps=29 format=3 uid="uid://b8t703ammwdme"]
 
-[ext_resource type="Script" uid="uid://s78nnflf40c6" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
+[ext_resource type="Script" uid="uid://g8t3oj4egdyf" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
 [ext_resource type="Texture2D" uid="uid://dqm74bkiryaq0" path="res://assets/pause/pause.tres" id="2_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://d2tocnx8tfsxh" path="res://assets/pause/Pause menu new.png" id="3_1s2dm"]
-[ext_resource type="Script" uid="uid://c70okqig5vgif" path="res://scripts/settings_menu.gd" id="3_v4r4p"]
+[ext_resource type="Script" uid="uid://cpk5u71ksvwo8" path="res://scripts/settings_menu.gd" id="3_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://c4b4jpw3eejnb" path="res://assets/main menu/Settings music - sfx volume revisi (1).png" id="5_1s2dm"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="6_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://11ragk0dhu3k" path="res://assets/retry/Are_u_sure retry.png" id="7_88e76"]
-[ext_resource type="Texture2D" path="res://assets/main menu/Yes.tres" id="7_knqa7"]
-[ext_resource type="Texture2D" path="res://assets/main menu/No.tres" id="8_71k7c"]
+[ext_resource type="Texture2D" uid="uid://bkkqfp4j3afhc" path="res://assets/main menu/Yes.tres" id="7_knqa7"]
+[ext_resource type="Texture2D" uid="uid://b8s5s0dkmxoo6" path="res://assets/main menu/No.tres" id="8_71k7c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4r4p"]
 
