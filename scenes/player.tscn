@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://rni2yfyra013"]
+[gd_scene load_steps=14 format=3 uid="uid://rni2yfyra013"]
 
 [ext_resource type="Script" uid="uid://cp5qlykbxuq0d" path="res://scripts/player.gd" id="1_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://bajthmljdxy5f" path="res://scenes/tow-truck.tscn" id="1_g2els"]
@@ -102,7 +102,6 @@ bus = &"SFX"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" node_paths=PackedStringArray("health_component")]
-visible = false
 offset_right = 397.0
 offset_bottom = 62.0
 theme_override_constants/separation = 20

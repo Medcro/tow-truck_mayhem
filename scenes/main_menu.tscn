@@ -117,7 +117,7 @@ texture = ExtResource("11_7b55j")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hl5e0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
-texture = ExtResource("11_rcqid")
+texture = ExtResource("10_lgwnu")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyero"]
 
