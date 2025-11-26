@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://biwl3t1inaovr"]
+[gd_scene load_steps=5 format=3 uid="uid://blrem3yry6n1v"]
 
-[ext_resource type="Script" path="res://scripts/shop_menu.gd" id="1_uj65v"]
-[ext_resource type="Script" path="res://scripts/customitazion.gd" id="2_76m3e"]
-[ext_resource type="Texture2D" path="res://assets/cars/truck/tow_truck.tres" id="3_cql4u"]
-[ext_resource type="Texture2D" path="res://assets/cars/cars/car.tres" id="4_xw4en"]
+[ext_resource type="Script" uid="uid://brbynxg35n16d" path="res://scripts/shop_menu.gd" id="1_uj65v"]
+[ext_resource type="Script" uid="uid://ijtcm041wk6t" path="res://scripts/customitazion.gd" id="2_76m3e"]
+[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/truck/tow_truck.tres" id="3_cql4u"]
+[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/cars/car.tres" id="4_xw4en"]
 
 [node name="ShopMenu" type="Control"]
 layout_mode = 3
