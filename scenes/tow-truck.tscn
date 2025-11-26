@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bajthmljdxy5f"]
 
 [ext_resource type="Script" uid="uid://d1tcml14krb3w" path="res://scripts/tow-truck.gd" id="1_ho5m3"]
-[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/tow_truck.tres" id="2_de388"]
+[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/truck/tow_truck.tres" id="2_de388"]
 [ext_resource type="AudioStream" uid="uid://l8r4jk2qrknf" path="res://assets/audio/Engine Driving SFX.mp3" id="3_de388"]
 [ext_resource type="Script" uid="uid://cx8fywn5oyhow" path="res://scripts/hurtbox.gd" id="3_qcf07"]
 

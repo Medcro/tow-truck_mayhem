@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csnmve3v1a6yc"]
 
-[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/car.tres" id="1_c35m8"]
+[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/cars/car.tres" id="1_c35m8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c35m8"]
 
