@@ -1,40 +1,27 @@
 class_name Score
 extends Node
 
-# supposed to have declare the placeholder star
-# supposed to import time signal when level cleared under time limit
+@onready var score : int = 3
+@onready var clock_node: Clock = $"../Timer"
+@onready var health_node: Health = $"../../Player/Health"
+@onready var checkpoint_node: Checkpoint = $"../../Checkpoint"
+@onready var game_over_node: GameOverManager = $"../GameOverManager"
 
-#@export var health: Health # supposed to share health variable
-#@export signal finish: game_finished_under_time_limit # supposed to export signal of finished game idk how
-var score : int = 3
+func _ready() -> void:
+	score = clampi(score, 0, 3)
+	clock_node.time_out.connect(_decrease_score)
+	health_node.health_low.connect(_decrease_score)
+	checkpoint_node.checkpoint_activated.connect(_reveal_stars)
+	game_over_node.player_lost.connect(_on_player_lost)
 
 # display stars in label when level is cleared
-func reveal_stars() -> void:
-	if score == 0:
-		$Stars.visible = false
-		$Stars.visible = false
-		$Stars.visible = false
-	if score == 1:
-		$Stars.visible = true
-		$Stars.visible = false
-		$Stars.visible = false
-	if score == 2:
-		$Stars.visible = true
-		$Stars.visible = true
-		$Stars.visible = false
-	if score == 3:
-		$Stars.visible = true
-		$Stars.visible = true
-		$Stars.visible = true
+func _reveal_stars() -> void:
+	pass
 
+func _decrease_score() -> void:
+	score -= 1
+	print(score)
 
-#func decrease_score() -> void:
-	#if health <= 3: # i can't share variable in health.gd to connect here
-		#score -= 1
-	#if health <= 1:
-		#score -= 2
-		#if emit_signal(finish): # this function checked after health is checked
-			#score -= 0
-
-func level_finished() -> void:
-	reveal_stars()
+func _on_player_lost() -> void:
+	score = 0
+	print(score)

@@ -21,9 +21,9 @@
 radius = 13.0
 height = 68.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1ej7"]
-radius = 13.812149
-height = 68.26245
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8ls1"]
+radius = 12.588114
+height = 65.961334
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
 radius = 30.027796
@@ -34,6 +34,7 @@ script = ExtResource("1_a8ls1")
 
 [node name="Tow-Truck" parent="." instance=ExtResource("1_g2els")]
 position = Vector2(146, -3)
+engine_power = 400.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tow-Truck"]
 rotation = 1.5647471
@@ -56,7 +57,7 @@ health = NodePath("../../Health")
 position = Vector2(3.0222473, 0.3502643)
 rotation = 1.5811385
 scale = Vector2(2.4338822, 2.607293)
-shape = SubResource("CapsuleShape2D_f1ej7")
+shape = SubResource("CapsuleShape2D_a8ls1")
 
 [node name="sfx_engine2" type="AudioStreamPlayer2D" parent="Tow-Truck"]
 stream = ExtResource("4_ur7pv")

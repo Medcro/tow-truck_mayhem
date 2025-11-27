@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://df6103kwcwi02"]
+[gd_scene load_steps=12 format=4 uid="uid://df6103kwcwi02"]
 
 [ext_resource type="Script" uid="uid://crinlwtshcvqt" path="res://scripts/level_1.gd" id="1_15mv3"]
 [ext_resource type="TileSet" uid="uid://dugf0i3e7mifh" path="res://assets/tilemap/tilemaps.tres" id="1_pa8r4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wp3dtf2tgjc" path="res://scenes/timer.tscn" id="4_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://bxt85dgajr42e" path="res://scenes/game_over_manager.tscn" id="5_2os1m"]
 [ext_resource type="AudioStream" uid="uid://dqgese56bc37t" path="res://assets/audio/Level Start SFX.mp3" id="6_go7sj"]
+[ext_resource type="PackedScene" uid="uid://ctxrebt4dd380" path="res://scenes/score.tscn" id="7_2os1m"]
 [ext_resource type="PackedScene" uid="uid://bfg7gsxlcq27n" path="res://scenes/checkpoint.tscn" id="7_7gny6"]
 [ext_resource type="AudioStream" uid="uid://c04y7f607bj2r" path="res://assets/audio/Gameplay OST (Middle-Loopable).mp3" id="9_2y5yt"]
 [ext_resource type="AudioStream" uid="uid://bfj8ji5w7m02" path="res://assets/audio/Gameplay OST (Start).mp3" id="10_2os1m"]
@@ -45,12 +46,14 @@ position = Vector2(0, 46)
 
 [node name="GameOverManager" parent="CanvasLayer" instance=ExtResource("5_2os1m")]
 
+[node name="Score" parent="CanvasLayer" instance=ExtResource("7_2os1m")]
+
 [node name="LevelStartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_go7sj")
 volume_db = -2.0
 bus = &"SFX"
 
-[node name="Checkpoint" parent="." instance=ExtResource("7_7gny6")]
+[node name="Checkpoint" parent="." groups=["Checkpoints"] instance=ExtResource("7_7gny6")]
 position = Vector2(5986, -862)
 
 [node name="GameplayOST" type="AudioStreamPlayer" parent="."]

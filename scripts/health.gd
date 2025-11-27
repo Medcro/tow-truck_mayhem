@@ -4,6 +4,7 @@ extends Node
 signal max_health_changed(diff: int) # emiited when the max health changed
 signal health_changed(diff: int) # emitted when the health changed
 signal health_depleted # emitted when the health reaches zero
+signal health_low
 
 @export var max_health: int = 5 : set = set_max_health, get = get_max_health
 @export var immortality: bool = false : set = set_immortality, get = get_immortality
@@ -13,11 +14,15 @@ var immortality_timer: Timer = null
 
 # initialized the entitiy's health
 @onready var health: int = max_health : set = set_health, get = get_health
-@onready var checkpoint_component : Checkpoint = $"../../Checkpoint"
 @onready var low_health_sfx: AudioStreamPlayer = $LowHealthSFX
+@onready var checkpoint_component: Checkpoint
 
 func _ready():
-	checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
+	var found_checkpoints = get_tree().get_nodes_in_group("Checkpoints")
+	
+	if found_checkpoints.size() > 0:
+		checkpoint_component = found_checkpoints[0]
+		checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
 
 func set_max_health(value: int):
 	# ensure max health is always at least 1
@@ -71,12 +76,14 @@ func set_health(value: int):
 		var difference = clamped_value - health
 		health = value
 		health_changed.emit(difference)
-		
+
 		if health == 2:
 			low_health_sfx.play()
+			health_low.emit()
 		# emits the health_depleted signal
 		if health == 0:
 			low_health_sfx.stop()
+			health_low.emit()
 			health_depleted.emit()
 		
 func get_health():
