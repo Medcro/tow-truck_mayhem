@@ -1,0 +1,1008 @@
+[gd_scene load_steps=33 format=3 uid="uid://cf12xqt1yrplj"]
+
+[ext_resource type="Script" uid="uid://ccwyeqrbgthe2" path="res://scripts/level_select_menu.gd" id="1_p0wlc"]
+[ext_resource type="Texture2D" uid="uid://bu7ay52oa84d0" path="res://assets/level select w instructions.png" id="2_rif6e"]
+[ext_resource type="Texture2D" uid="uid://dgd44xe5atjif" path="res://assets/select level/level start with back.png" id="3_chg43"]
+[ext_resource type="Script" uid="uid://b31pwnphwecmq" path="res://scenes/time_stop.gd" id="3_r77uv"]
+[ext_resource type="Script" uid="uid://k5fximv3pmbp" path="res://scenes/invincibility.gd" id="4_r77uv"]
+[ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="4_rif6e"]
+[ext_resource type="Script" uid="uid://c73wtr7pfmn6q" path="res://scenes/speed_boost.gd" id="5_4nqmc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0wlc"]
+texture = ExtResource("2_rif6e")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6tf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4hmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3shnc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chg43"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0wlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r77uv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2epne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nqmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7plkq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckc44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2xx4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htctk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rif6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxici"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thf6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f86jd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_317l6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ichcy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rif6e"]
+texture = ExtResource("3_chg43")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4mbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rovvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wyvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4qq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1411"]
+
+[node name="Level_Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0wlc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0wlc")
+
+[node name="LevelLockedContainer" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level1_locked" type="Label" parent="Panel/LevelLockedContainer"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 183.0
+offset_right = 922.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6tf7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hmm")
+text = "1. ??????????????????????"
+
+[node name="Level2_locked" type="Label" parent="Panel/LevelLockedContainer"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 252.0
+offset_right = 922.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6tf7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hmm")
+text = "2. ??????????????????????"
+
+[node name="Level3_locked" type="Label" parent="Panel/LevelLockedContainer"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 321.0
+offset_right = 922.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6tf7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hmm")
+text = "3. ??????????????????????"
+
+[node name="Level4_locked" type="Label" parent="Panel/LevelLockedContainer"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 390.0
+offset_right = 922.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6tf7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hmm")
+text = "4. ??????????????????????"
+
+[node name="Level5_locked" type="Label" parent="Panel/LevelLockedContainer"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 459.0
+offset_right = 922.0
+offset_bottom = 493.0
+theme_override_colors/font_color = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6tf7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hmm")
+text = "5. ??????????????????????"
+
+[node name="LevelContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -210.0
+offset_right = 346.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="Level0" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "0. A Humble Beginning"
+alignment = 0
+
+[node name="Level1" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "1. Special Delivery...?"
+alignment = 0
+
+[node name="Level2" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "2. Boom Bam Ka-Chow!
+"
+alignment = 0
+
+[node name="Level3" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "3. Another one
+"
+alignment = 0
+
+[node name="Level4" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "4.Highway to Heaven
+"
+alignment = 0
+
+[node name="Level5" type="Button" parent="Panel/LevelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3shnc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_chg43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0wlc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r77uv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2epne")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4nqmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7plkq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckc44")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o2xx4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_htctk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rif6e")
+text = "5. Lovey-Dovey Crash!
+"
+alignment = 0
+
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="TimeStop" type="Button" parent="Panel"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 250.0
+offset_top = 490.0
+offset_right = 304.0
+offset_bottom = 548.0
+script = ExtResource("3_r77uv")
+
+[node name="Invincibility" type="Button" parent="Panel"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 331.0
+offset_top = 493.0
+offset_right = 385.0
+offset_bottom = 549.0
+script = ExtResource("4_r77uv")
+
+[node name="SpeedBoost" type="Button" parent="Panel"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 184.0
+offset_top = 493.0
+offset_right = 233.0
+offset_bottom = 549.0
+script = ExtResource("5_4nqmc")
+
+[node name="Level0Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level0Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 637.0
+offset_top = 114.0
+offset_right = 932.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "0. A Humble Beginning"
+
+[node name="Description" type="RichTextLabel" parent="Level0Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 183.0
+offset_right = 938.0
+offset_bottom = 286.0
+theme_override_font_sizes/normal_font_size = 24
+text = "An old lady's car broke down, help her as your first towing assignment!
+"
+
+[node name="|" type="Label" parent="Level0Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level0Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+01:00"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level0Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level0Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level0Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level0Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="Level1Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level1Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 114.0
+offset_right = 951.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "1. Special Delivery...?
+"
+
+[node name="Description" type="RichTextLabel" parent="Level1Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 183.0
+offset_right = 938.0
+offset_bottom = 355.0
+theme_override_font_sizes/normal_font_size = 24
+text = "A young and stunning woman is on her way towards the shopping centre when her car suddenly stopped"
+
+[node name="|" type="Label" parent="Level1Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level1Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+01:00"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level1Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level1Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level1Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level1Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="Level2Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level2Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 627.0
+offset_top = 113.0
+offset_right = 1029.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "2. Boom Bam Ka-Chow!
+"
+
+[node name="Description" type="RichTextLabel" parent="Level2Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 183.0
+offset_right = 938.0
+offset_bottom = 286.0
+theme_override_font_sizes/normal_font_size = 24
+text = "It appears someone wanted to touch grass, but took it too far..."
+
+[node name="|" type="Label" parent="Level2Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level2Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+01:00"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level2Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level2Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level2Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level2Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="Level3Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level3Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 114.0
+offset_right = 941.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "3. Another one"
+
+[node name="Description" type="RichTextLabel" parent="Level3Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 183.0
+offset_right = 938.0
+offset_bottom = 286.0
+theme_override_font_sizes/normal_font_size = 24
+text = "A call for help! Wait... haven't i seen you somewhere before?
+"
+
+[node name="|" type="Label" parent="Level3Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level3Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+01:30"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level3Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level3Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level3Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level3Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="Level4Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level4Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 113.0
+offset_right = 1005.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "4. Highway to Heaven
+"
+
+[node name="Description" type="RichTextLabel" parent="Level4Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 175.0
+offset_right = 938.0
+offset_bottom = 316.0
+theme_override_font_sizes/normal_font_size = 24
+text = "You find someone crashing a car, and the person doesn't have a license?!"
+
+[node name="|" type="Label" parent="Level4Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level4Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+01:30"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level4Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level4Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level4Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level4Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="Level5Description" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rif6e")
+
+[node name="Title" type="Label" parent="Level5Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 114.0
+offset_right = 1122.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "5. Lovey-Dovey Crash!
+"
+
+[node name="Description" type="RichTextLabel" parent="Level5Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 175.0
+offset_right = 938.0
+offset_bottom = 355.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Someone has an appointment with their lover, but perhaps the person loves danger better"
+
+[node name="|" type="Label" parent="Level5Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 395.0
+offset_right = 804.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 60
+text = "|"
+
+[node name="Time" type="Label" parent="Level5Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 395.0
+offset_right = 773.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Time
+02:00"
+horizontal_alignment = 1
+
+[node name="Life" type="Label" parent="Level5Description"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 395.0
+offset_right = 919.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Car Life
+5"
+horizontal_alignment = 1
+
+[node name="AcceptButton" type="Button" parent="Level5Description"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 508.0
+offset_right = 773.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="BackButton" type="Button" parent="Level5Description"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 501.0
+offset_right = 919.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rovvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wyvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4qq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1411")
+
+[node name="Back" type="Button" parent="Level5Description"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 51.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thf6c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f86jd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
+
+[node name="ButtonPressed_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rif6e")
+volume_db = -2.0
+bus = &"SFX"
+
+[connection signal="pressed" from="Panel/LevelContainer/Level0" to="." method="_on_level_0_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level0" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/TimeStop" to="Panel/TimeStop" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Invincibility" to="Panel/Invincibility" method="_on_pressed"]
+[connection signal="pressed" from="Panel/SpeedBoost" to="Panel/SpeedBoost" method="_on_pressed"]
+[connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_accept_level_0"]
+[connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level0Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept"]
+[connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept_level_1"]
+[connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level1Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept"]
+[connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept_level_2"]
+[connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level2Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept"]
+[connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept_level_3"]
+[connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="Level3Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept"]
+[connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept_level_4"]
+[connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level4Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept"]
+[connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept_level_5"]
+[connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level5Description/Back" to="." method="_on_back_desc_pressed"]
