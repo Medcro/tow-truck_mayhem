@@ -1,15 +1,15 @@
 [gd_scene load_steps=36 format=3 uid="uid://cf12xqt1yrplj"]
 
 [ext_resource type="Script" uid="uid://ccwyeqrbgthe2" path="res://scripts/level_select_menu.gd" id="1_p0wlc"]
-[ext_resource type="Texture2D" uid="uid://bwand54uylphw" path="res://assets/select level/level select with back.png" id="2_rif6e"]
+[ext_resource type="Texture2D" uid="uid://bc4e5d0qpyje3" path="res://assets/select level/level select w instructions.png" id="2_4nqmc"]
 [ext_resource type="Texture2D" uid="uid://deutvbxbkuaff" path="res://assets/select level/level 0.png" id="3_4nqmc"]
 [ext_resource type="Texture2D" uid="uid://cn7xr1lgls5ui" path="res://assets/select level/level 1.png" id="4_7plkq"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="4_rif6e"]
 [ext_resource type="Texture2D" uid="uid://8sfbsfvinej6" path="res://assets/select level/level 2 and 3 for now.png" id="5_ckc44"]
 [ext_resource type="Texture2D" uid="uid://b8bpxppsya2au" path="res://assets/select level/level 4.png" id="6_o2xx4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0wlc"]
-texture = ExtResource("2_rif6e")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7plkq"]
+texture = ExtResource("2_4nqmc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6tf7"]
 
@@ -85,7 +85,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_p0wlc")
+theme_override_styles/panel = SubResource("StyleBoxTexture_7plkq")
 
 [node name="LevelLockedContainer" type="Control" parent="Panel"]
 anchors_preset = 0
@@ -321,6 +321,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
 
 [node name="Level0Description" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

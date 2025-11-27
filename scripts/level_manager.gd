@@ -23,4 +23,3 @@ func _on_time_low():
 
 func _on_checkpoint_activated():
 	player.input_enabled = false
-	LevelCore.mark_level_complete(level_name)

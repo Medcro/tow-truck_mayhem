@@ -22,8 +22,7 @@ func _ready() -> void:
 func mark_level_complete(level_name: String) -> void:
 	if not completed_levels.get(level_name, false):
 		completed_levels[level_name] = true
-		save_game_data() # Force a save to disk
-		print(level_name + " marked as complete and saved.")
+		save_game_data()
 
 func update_level_time(level_name: String, time_remaining: float) -> void:
 	var current_best = level_times.get(level_name, 0.0)
