@@ -34,7 +34,7 @@ script = ExtResource("1_a8ls1")
 
 [node name="Tow-Truck" parent="." instance=ExtResource("1_g2els")]
 position = Vector2(146, -3)
-engine_power = 400.0
+engine_power = 450.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tow-Truck"]
 rotation = 1.5647471

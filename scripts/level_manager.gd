@@ -1,4 +1,5 @@
 extends Node2D
+@export var level_name : String = "Level_0"
 
 @onready var level_start_sfx: AudioStreamPlayer = $LevelStartSfx
 @onready var checkpoint_node = $Checkpoint 
@@ -22,4 +23,4 @@ func _on_time_low():
 
 func _on_checkpoint_activated():
 	player.input_enabled = false
-	LevelCore.lvl0_completed = true
+	LevelCore.mark_level_complete(level_name)

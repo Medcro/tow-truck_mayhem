@@ -15,14 +15,10 @@ var immortality_timer: Timer = null
 # initialized the entitiy's health
 @onready var health: int = max_health : set = set_health, get = get_health
 @onready var low_health_sfx: AudioStreamPlayer = $LowHealthSFX
-@onready var checkpoint_component: Checkpoint
+@onready var checkpoint_component: Checkpoint = $"../../Checkpoint"
 
 func _ready():
-	var found_checkpoints = get_tree().get_nodes_in_group("Checkpoints")
-	
-	if found_checkpoints.size() > 0:
-		checkpoint_component = found_checkpoints[0]
-		checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
+	checkpoint_component.checkpoint_activated.connect(_on_checkpoint_activated)
 
 func set_max_health(value: int):
 	# ensure max health is always at least 1

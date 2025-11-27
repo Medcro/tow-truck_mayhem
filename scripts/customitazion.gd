@@ -5,6 +5,8 @@ var temp_car_index: int = 0
 
 func _ready() -> void:
 	connect_signals()
+	%"tow-truck".set_self_modulate(GlobalData.truck_color_array[GlobalData.current_truck])
+	%car.texture = GlobalData.car_array[GlobalData.current_car]
 	
 func connect_signals() -> void:
 	%TruckBack.connect("pressed", truck_back)
@@ -30,4 +32,4 @@ func car_forw() -> void:
 	%car.texture = GlobalData.car_array[GlobalData.current_car]
 
 func save() -> void:
-	pass
+	GlobalData.save_game_data()

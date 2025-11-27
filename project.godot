@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelCore="*res://scripts/level_core.gd"
 GlobalSettings="*res://scripts/global_settings.gd"
 AudioPlayer="*res://scripts/audio_player.gd"
 GlobalData="*res://scripts/global_data.gd"

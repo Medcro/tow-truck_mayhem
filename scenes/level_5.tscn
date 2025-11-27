@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://cbfpsarwdwt1l"]
 
+[ext_resource type="Script" uid="uid://wn0i3g7bv8c1" path="res://scripts/level_manager.gd" id="1_1q3ip"]
 [ext_resource type="TileSet" uid="uid://dugf0i3e7mifh" path="res://assets/tilemap/tilemaps.tres" id="1_ak5vt"]
-[ext_resource type="Script" uid="uid://cbs64kfnjh20l" path="res://scripts/level_5.gd" id="1_ij176"]
 [ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="2_ij176"]
 [ext_resource type="PackedScene" uid="uid://b8t703ammwdme" path="res://scenes/pause_menu.tscn" id="3_uva14"]
 [ext_resource type="PackedScene" uid="uid://wp3dtf2tgjc" path="res://scenes/timer.tscn" id="4_vqwqk"]
@@ -13,7 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bfj8ji5w7m02" path="res://assets/audio/Gameplay OST (Start).mp3" id="10_1q3ip"]
 
 [node name="level_5" type="Node2D"]
-script = ExtResource("1_ij176")
+script = ExtResource("1_1q3ip")
+level_name = "Level_5"
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -48,6 +49,7 @@ time = 120
 [node name="GameOverManager" parent="CanvasLayer" instance=ExtResource("5_1q3ip")]
 
 [node name="Score" parent="CanvasLayer" groups=["Checkpoints"] instance=ExtResource("7_1q3ip")]
+level_name = "Level_5"
 
 [node name="LevelStartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_e4ab4")

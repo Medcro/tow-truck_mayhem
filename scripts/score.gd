@@ -7,6 +7,8 @@ extends Node
 @onready var checkpoint_node: Checkpoint = $"../../Checkpoint"
 @onready var game_over_node: GameOverManager = $"../GameOverManager"
 
+@export var level_name : String = "Level_0"
+
 func _ready() -> void:
 	score = clampi(score, 0, 3)
 	clock_node.time_out.connect(_decrease_score)
@@ -16,12 +18,13 @@ func _ready() -> void:
 
 # display stars in label when level is cleared
 func _reveal_stars() -> void:
-	pass
-
+	GlobalData.mark_level_complete(level_name)
+	GlobalData.update_level_score(level_name, score)
+	var time_left = clock_node.get_time_remaining()
+	GlobalData.update_level_time(level_name, time_left)
+	
 func _decrease_score() -> void:
 	score -= 1
-	print(score)
 
 func _on_player_lost() -> void:
 	score = 0
-	print(score)

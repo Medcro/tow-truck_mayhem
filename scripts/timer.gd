@@ -32,3 +32,6 @@ func _process(delta):
 func _on_timer_timeout() -> void:
 	emit_signal("time_out")  # Notify other nodes that the player lost
 	print("Time out")
+
+func get_time_remaining() -> float:
+	return timer.time_left
