@@ -52,6 +52,8 @@ func _on_body_exited(body: Node2D):
 func take_damage(amount: int, body_source: Node2D):
 	if health.immortality:
 		return
+	if GameState.player_invincible:
+		return
 	
 	car_crash_sfx.play()
 	

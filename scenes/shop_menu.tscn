@@ -1,14 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://blrem3yry6n1v"]
+[gd_scene load_steps=27 format=3 uid="uid://blrem3yry6n1v"]
 
 [ext_resource type="Script" uid="uid://brbynxg35n16d" path="res://scripts/shop_menu.gd" id="1_uj65v"]
-[ext_resource type="Script" uid="uid://ijtcm041wk6t" path="res://scripts/customitazion.gd" id="2_76m3e"]
 [ext_resource type="Texture2D" uid="uid://utd6h42bfby1" path="res://assets/shop/shop.png" id="2_hgolc"]
 [ext_resource type="Texture2D" uid="uid://duculbdkia1cp" path="res://assets/shop/money.png" id="3_amlfo"]
-[ext_resource type="Texture2D" uid="uid://drinb6tlybh6g" path="res://assets/cars/truck/tow_truck.tres" id="3_cql4u"]
 [ext_resource type="Texture2D" uid="uid://dooyntt61tcvy" path="res://assets/shop/speed.png" id="4_tnh3q"]
-[ext_resource type="Texture2D" uid="uid://dutgric460xv" path="res://assets/cars/cars/car.tres" id="4_xw4en"]
 [ext_resource type="Texture2D" uid="uid://l44noy4i8caf" path="res://assets/shop/timestop.png" id="5_5gjx7"]
 [ext_resource type="Texture2D" uid="uid://bpkaalxy7jlaj" path="res://assets/shop/invincible.png" id="6_rg5ak"]
+[ext_resource type="Texture2D" uid="uid://droa55wd3vbvj" path="res://assets/shop/shop sold.png" id="7_amlfo"]
+[ext_resource type="Texture2D" uid="uid://coerp2v2im3ht" path="res://assets/game over/back_default.tres" id="8_lngpu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eqtrt"]
 texture = ExtResource("2_hgolc")
@@ -16,8 +15,6 @@ texture = ExtResource("2_hgolc")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4m6t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47k2f"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjlef"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wruk4"]
 
@@ -27,8 +24,6 @@ texture = ExtResource("2_hgolc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayr2k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0ssk"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x208s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu5w1"]
@@ -37,13 +32,22 @@ texture = ExtResource("2_hgolc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pejai"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oyiy5"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0d6ls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hck3t"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgolc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_amlfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnh3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gjx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg5ak"]
+
 [node name="ShopMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +57,7 @@ grow_vertical = 2
 script = ExtResource("1_uj65v")
 
 [node name="Shop" type="Panel" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,42 +65,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_eqtrt")
-
-[node name="Buy" type="Button" parent="Shop"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 540.0
-offset_right = 210.0
-offset_bottom = 586.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_h4m6t")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_47k2f")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vjlef")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_wruk4")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3frqh")
-
-[node name="Buy2" type="Button" parent="Shop"]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 542.0
-offset_right = 615.0
-offset_bottom = 586.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_62ijh")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ayr2k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_b0ssk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_x208s")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_eu5w1")
-
-[node name="Buy3" type="Button" parent="Shop"]
-layout_mode = 0
-offset_left = 929.0
-offset_top = 544.0
-offset_right = 1010.0
-offset_bottom = 586.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cp1w4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_pejai")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_oyiy5")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0d6ls")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hck3t")
 
 [node name="TextureRect" type="TextureRect" parent="Shop"]
 layout_mode = 0
@@ -158,7 +127,7 @@ offset_top = 496.0
 offset_right = 632.0
 offset_bottom = 530.0
 theme_override_font_sizes/font_size = 24
-text = "8"
+text = "35"
 
 [node name="Label3" type="Label" parent="Shop"]
 layout_mode = 0
@@ -167,7 +136,7 @@ offset_top = 493.0
 offset_right = 1025.0
 offset_bottom = 527.0
 theme_override_font_sizes/font_size = 24
-text = "12"
+text = "65"
 
 [node name="Item1" type="TextureRect" parent="Shop"]
 layout_mode = 0
@@ -196,126 +165,123 @@ offset_bottom = 562.0
 scale = Vector2(0.37744188, 0.3754693)
 texture = ExtResource("6_rg5ak")
 
-[node name="Customitazion" type="Panel" parent="."]
+[node name="Buyed" type="TextureRect" parent="Shop"]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_76m3e")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Customitazion"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -133.0
-offset_right = 113.0
-offset_bottom = -58.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Customitazion/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Tow-Truck: "
-
-[node name="TruckBack" type="Button" parent="Customitazion/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-text = "<"
-
-[node name="TruckForw" type="Button" parent="Customitazion/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = ">"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Customitazion"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.5
-offset_top = 48.0
-offset_right = 114.5
-offset_bottom = 123.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Customitazion/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Car: "
-
-[node name="CarBack" type="Button" parent="Customitazion/HBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-text = "<"
-
-[node name="CarForw" type="Button" parent="Customitazion/HBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-text = ">"
-
-[node name="Control" type="Control" parent="Customitazion"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="tow-truck" type="TextureRect" parent="Customitazion/Control"]
-unique_name_in_owner = true
 layout_mode = 0
-offset_left = 737.0
-offset_top = 152.0
-offset_right = 819.0
-offset_bottom = 331.0
-texture = ExtResource("3_cql4u")
+offset_left = 106.0
+offset_top = 535.0
+offset_right = 279.0
+offset_bottom = 700.0
+scale = Vector2(0.7472873, 0.51887274)
+texture = ExtResource("7_amlfo")
 
-[node name="car" type="TextureRect" parent="Customitazion/Control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 740.0
-offset_top = 350.0
-offset_right = 817.0
-offset_bottom = 489.0
-texture = ExtResource("4_xw4en")
-
-[node name="save" type="Button" parent="Customitazion"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 525.0
-offset_top = 527.0
-offset_right = 569.0
-offset_bottom = 558.0
-scale = Vector2(3.4709272, 2.4429188)
-text = "Save"
-
-[node name="ChangeMode" type="Button" parent="."]
+[node name="Buyed2" type="TextureRect" parent="Shop"]
 visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -190.0
-offset_top = -76.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Mode"
+layout_mode = 0
+offset_left = 507.0
+offset_top = 537.00006
+offset_right = 680.0
+offset_bottom = 702.00006
+scale = Vector2(0.7472873, 0.51887274)
+texture = ExtResource("7_amlfo")
+
+[node name="Buyed3" type="TextureRect" parent="Shop"]
+visible = false
+layout_mode = 0
+offset_left = 909.00006
+offset_top = 535.00006
+offset_right = 1082.0
+offset_bottom = 700.00006
+scale = Vector2(0.7472873, 0.51887274)
+texture = ExtResource("7_amlfo")
+
+[node name="Buy" type="Button" parent="Shop"]
+process_mode = 3
+z_index = 10
+layout_mode = 0
+offset_left = 130.0
+offset_top = 540.0
+offset_right = 210.0
+offset_bottom = 586.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h4m6t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_47k2f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wruk4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3frqh")
+
+[node name="Buy2" type="Button" parent="Shop"]
+process_mode = 3
+z_index = 10
+layout_mode = 0
+offset_left = 536.0
+offset_top = 542.0
+offset_right = 615.0
+offset_bottom = 586.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_62ijh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ayr2k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x208s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eu5w1")
+
+[node name="Buy3" type="Button" parent="Shop"]
+process_mode = 3
+z_index = 10
+layout_mode = 0
+offset_left = 929.0
+offset_top = 544.0
+offset_right = 1010.0
+offset_bottom = 586.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cp1w4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pejai")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0d6ls")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hck3t")
+
+[node name="Back" type="Button" parent="Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hgolc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_amlfo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tnh3q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5gjx7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rg5ak")
+icon = ExtResource("8_lngpu")
+
+[node name="Item1Desc" type="Label" parent="Shop"]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 316.0
+offset_right = 1194.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 24
+text = "Activate once in a 
+level and don't take 
+damage for 5 secs."
+horizontal_alignment = 1
+
+[node name="Item1Desc2" type="Label" parent="Shop"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 316.0
+offset_right = 855.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 24
+text = "Activate once in a 
+level and stop time 
+for 10 sec."
+horizontal_alignment = 1
+
+[node name="Item1Desc3" type="Label" parent="Shop"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 316.0
+offset_right = 457.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 24
+text = " Activate once in a 
+level to speed up 
+the car for 3 sec"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Shop/Buy" to="." method="_on_buy_pressed"]
 [connection signal="pressed" from="Shop/Buy2" to="." method="_on_buy_2_pressed"]
 [connection signal="pressed" from="Shop/Buy3" to="." method="_on_buy_3_pressed"]
-[connection signal="pressed" from="ChangeMode" to="." method="_on_change_mode_pressed"]
+[connection signal="pressed" from="Shop/Back" to="." method="_on_back_pressed"]

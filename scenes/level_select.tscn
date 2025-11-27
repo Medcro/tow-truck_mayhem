@@ -1,14 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://cf12xqt1yrplj"]
+[gd_scene load_steps=41 format=3 uid="uid://cf12xqt1yrplj"]
 
-[ext_resource type="Script" uid="uid://ccwyeqrbgthe2" path="res://scripts/level_select_menu.gd" id="1_p0wlc"]
+[ext_resource type="Script" uid="uid://ccwyeqrbgthe2" path="res://scripts/level_select.gd" id="1_p0wlc"]
 [ext_resource type="Texture2D" uid="uid://bc4e5d0qpyje3" path="res://assets/select level/level select w instructions.png" id="2_4nqmc"]
-[ext_resource type="Texture2D" uid="uid://deutvbxbkuaff" path="res://assets/select level/level 0.png" id="3_4nqmc"]
-[ext_resource type="Texture2D" uid="uid://cn7xr1lgls5ui" path="res://assets/select level/level 1.png" id="4_7plkq"]
+[ext_resource type="Texture2D" uid="uid://hp2gx8b7st2c" path="res://assets/select level/level start 0.png" id="3_4nqmc"]
+[ext_resource type="Texture2D" uid="uid://bhshptshy8f2m" path="res://assets/select level/level start 1.png" id="4_7plkq"]
 [ext_resource type="AudioStream" uid="uid://ckraut501hxsx" path="res://assets/audio/Button Press SFX.mp3" id="4_rif6e"]
-[ext_resource type="Texture2D" uid="uid://8sfbsfvinej6" path="res://assets/select level/level 2 and 3 for now.png" id="5_ckc44"]
-[ext_resource type="Texture2D" uid="uid://b8bpxppsya2au" path="res://assets/select level/level 4.png" id="6_o2xx4"]
+[ext_resource type="Texture2D" uid="uid://coul7ldycf7e7" path="res://assets/select level/level start cadangan buat 5.png" id="5_ckc44"]
+[ext_resource type="Texture2D" uid="uid://m63tncxpqr00" path="res://assets/select level/level start 4.png" id="6_o2xx4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7plkq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4nqmc"]
 texture = ExtResource("2_4nqmc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6tf7"]
@@ -60,6 +60,16 @@ texture = ExtResource("3_4nqmc")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1411"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_112fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_povud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6k74p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v042j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ot7t"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s6tf7"]
 texture = ExtResource("4_7plkq")
 
@@ -85,7 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_7plkq")
+theme_override_styles/panel = SubResource("StyleBoxTexture_4nqmc")
 
 [node name="LevelLockedContainer" type="Control" parent="Panel"]
 anchors_preset = 0
@@ -321,7 +331,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_317l6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ichcy")
 
 [node name="Level0Description" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -431,6 +440,18 @@ offset_right = 480.0
 offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
+
+[node name="Shop" type="Button" parent="Level0Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
 
 [node name="Level1Description" type="Panel" parent="."]
 visible = false
@@ -544,6 +565,18 @@ offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
 
+[node name="Shop" type="Button" parent="Level1Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
+
 [node name="Level2Description" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -655,6 +688,18 @@ offset_right = 480.0
 offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
+
+[node name="Shop" type="Button" parent="Level2Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
 
 [node name="Level3Description" type="Panel" parent="."]
 visible = false
@@ -768,6 +813,18 @@ offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
 
+[node name="Shop" type="Button" parent="Level3Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
+
 [node name="Level4Description" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -879,6 +936,18 @@ offset_right = 480.0
 offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
+
+[node name="Shop" type="Button" parent="Level4Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
 
 [node name="Level5Description" type="Panel" parent="."]
 visible = false
@@ -992,6 +1061,18 @@ offset_bottom = 455.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
 
+[node name="Shop" type="Button" parent="Level5Description"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 513.0
+offset_right = 374.0
+offset_bottom = 551.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_112fn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_povud")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6k74p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v042j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ot7t")
+
 [node name="ButtonPressed_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rif6e")
 volume_db = -2.0
@@ -999,49 +1080,55 @@ bus = &"SFX"
 
 [connection signal="pressed" from="Panel/LevelContainer/Level0" to="." method="_on_level_0_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level0" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/LevelContainer/Level1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/LevelContainer/Level2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="Panel/LevelContainer/Level3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level3" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Panel/LevelContainer/Level4" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/LevelContainer/Level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_accept_level_0"]
+[connection signal="pressed" from="Level0Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level0Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level0Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level0Description/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept"]
-[connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_accept_level_1"]
+[connection signal="pressed" from="Level1Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level1Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level1Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level1Description/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level2Description/AcceptButton" to="." method="_on_accept_level_2"]
 [connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level2Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level2Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level2Description/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept"]
-[connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_accept_level_3"]
+[connection signal="pressed" from="Level3Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level3Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="Level3Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level3Description/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level4Description/AcceptButton" to="." method="_on_accept_level_4"]
 [connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level4Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level4Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level4Description/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_accept_level_5"]
 [connection signal="pressed" from="Level5Description/AcceptButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level5Description/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level5Description/Back" to="." method="_on_back_desc_pressed"]
+[connection signal="pressed" from="Level5Description/Shop" to="." method="_on_shop_pressed"]

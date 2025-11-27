@@ -5,7 +5,7 @@ extends Control
 @onready var level_3: Button = %Level3
 @onready var level_4: Button = %Level4
 @onready var level_5: Button = %Level5
-	
+
 @onready var level_1_locked: Label = $Panel/LevelLockedContainer/Level1_locked
 @onready var level_2_locked: Label = $Panel/LevelLockedContainer/Level2_locked
 @onready var level_3_locked: Label = $Panel/LevelLockedContainer/Level3_locked
@@ -39,7 +39,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalData.load_game_data()
-	
+
 	AudioPlayer.play_music_level()
 	set_level_1()
 	set_level_2()
@@ -53,10 +53,10 @@ func _ready() -> void:
 	time_score_lvl3.text = get_formatted_time(best_time_lvl3)
 	time_score_lvl4.text = get_formatted_time(best_time_lvl4)
 	time_score_lvl5.text = get_formatted_time(best_time_lvl5)
-	
+
 	panel.visible = true
 	hide_all_description()
-	
+
 func get_formatted_time(total_seconds: float) -> String:
 	var minutes = floor(total_seconds / 60)
 	var seconds = int(total_seconds) % 60
@@ -65,7 +65,7 @@ func get_formatted_time(total_seconds: float) -> String:
 func _on_level_0_pressed() -> void:
 	panel.visible = false
 	level_0_description.visible = true	
-	
+
 
 func _on_level_1_pressed() -> void:
 	panel.visible = false
@@ -186,3 +186,7 @@ func _on_back_desc_pressed() -> void:
 	button_pressed_sfx.play()
 	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_shop_pressed() -> void:
+	button_pressed_sfx.play()
+	get_tree().change_scene_to_file("res://scenes/shop_menu.tscn")

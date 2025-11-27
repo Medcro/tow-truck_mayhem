@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://coerp2v2im3ht"]
+
+[ext_resource type="Texture2D" uid="uid://cd5g77evst8iv" path="res://assets/game over/Game over screen.png" id="1_wq0b0"]
+
+[resource]
+atlas = ExtResource("1_wq0b0")
+region = Rect2(251, 159.5, 107, 43)

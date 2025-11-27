@@ -23,6 +23,7 @@ var steer_direction: float = 0.0
 
 func _ready():
 	sfx_drive.play()
+	GameState.TowTruck = self
 	
 func _physics_process(delta: float):
 	handleSound()
@@ -40,6 +41,16 @@ func _physics_process(delta: float):
 		velocity = velocity.bounce(collision.get_normal())
 		
 	move_and_slide()
+	
+	if GameState.player_invincible:
+		modulate.a = 0.4
+	else:
+		modulate.a = 1.0
+	
+	if GameState.player_boost:
+		acceleration = acceleration*2
+	else:
+		acceleration = acceleration
 
 func get_input():
 	if input_enabled:

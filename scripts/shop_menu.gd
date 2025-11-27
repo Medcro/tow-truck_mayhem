@@ -2,31 +2,18 @@ extends Control
 
 @onready var shop: Panel = $Shop
 @onready var currency_label: Label = $Shop/Currency
-@onready var customization: Panel = $Customitazion 
-@onready var change_mode_btn: Button = $ChangeMode
+@onready var buyed_1: TextureRect = $Shop/Buyed
+@onready var buyed_2: TextureRect = $Shop/Buyed2
+@onready var buyed_3: TextureRect = $Shop/Buyed3
 
 func _ready() -> void:
-	switch_to_shop_mode()
 	update_currency_ui()
+	buyed_1.visible = false
+	buyed_2.visible = false
+	buyed_3.visible = false
 
 func update_currency_ui() -> void:
 	currency_label.text = str(GlobalData.tow_bucks)
-
-func switch_to_shop_mode() -> void:
-	shop.visible = true
-	customization.visible = false
-	change_mode_btn.text = "Customization"
-
-func switch_to_custom_mode() -> void:
-	shop.visible = false
-	customization.visible = true
-	change_mode_btn.text = "Shop"
-
-func _on_change_mode_pressed() -> void:
-	if shop.visible:
-		switch_to_custom_mode()
-	else:
-		switch_to_shop_mode()
 
 func attempt_purchase(cost: int, is_level_unlocked: bool, already_owned: bool) -> bool:
 	if not is_level_unlocked:
@@ -35,19 +22,27 @@ func attempt_purchase(cost: int, is_level_unlocked: bool, already_owned: bool) -
 		return false 
 	if GlobalData.tow_bucks < cost:
 		return false
-		
+
 	GlobalData.tow_bucks -= cost
 	update_currency_ui()
 	return true
 
 func _on_buy_pressed() -> void:
-	if attempt_purchase(100, GlobalData.is_level_complete("Level_0"), GlobalData.hasItem1):
+	if attempt_purchase(5, GlobalData.is_level_complete("Level_0"), GlobalData.hasItem1):
 		GlobalData.hasItem1 = true
+		buyed_1.visible = true
 
 func _on_buy_2_pressed() -> void:
-	if attempt_purchase(200, GlobalData.is_level_complete("Level_1"), GlobalData.hasItem2):
+	print("clicked")
+	if attempt_purchase(35, GlobalData.is_level_complete("Level_1"), GlobalData.hasItem2):
 		GlobalData.hasItem2 = true
+		buyed_1.visible = true
 
 func _on_buy_3_pressed() -> void:
-	if attempt_purchase(300, GlobalData.is_level_complete("Level_4"), GlobalData.hasItem3):
+	print("clicked")
+	if attempt_purchase(65, GlobalData.is_level_complete("Level_4"), GlobalData.hasItem3):
 		GlobalData.hasItem3 = true
+		buyed_1.visible = true
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")

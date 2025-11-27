@@ -11,6 +11,7 @@ extends Node
 @onready var star_1: Sprite2D = $Panel/Star1
 @onready var star_2: Sprite2D = $Panel/Star2
 @onready var star_3: Sprite2D = $Panel/Star3
+@onready var tow_bucks: Label = $"Panel/Tow-Bucks"
 
 @export var level_name : String = "Level_0"
 
@@ -33,6 +34,8 @@ func _reveal_stars() -> void:
 	GlobalData.update_level_score(level_name, score)
 	var time_left = clock_node.get_time_remaining()
 	GlobalData.update_level_time(level_name, time_left)
+	
+	await get_tree().create_timer(1.5).timeout
 
 	panel.visible = true
 
@@ -52,7 +55,27 @@ func _reveal_stars() -> void:
 		star_1.visible = false
 		star_2.visible = false
 		star_3.visible = false
+	
+	if level_name == "Level_0":
+		GlobalData.tow_bucks += 5
+		tow_bucks.text = "5"
+	if level_name == "Level_1":
+		GlobalData.tow_bucks += 10
+		tow_bucks.text = "10"
+	if level_name == "Level_2":
+		GlobalData.tow_bucks += 15
+		tow_bucks.text = "15"
+	if level_name == "Level_3":
+		GlobalData.tow_bucks += 20
+		tow_bucks.text = "20"
+	if level_name == "Level_4":
+		GlobalData.tow_bucks += 25
+		tow_bucks.text = "25"
+	if level_name == "Level_5":
+		GlobalData.tow_bucks += 30
+		tow_bucks.text = "30"
 
+	GlobalData.save_game_data()
 	get_tree().paused = true
 
 func _decrease_score() -> void:
@@ -66,4 +89,4 @@ func _on_retry_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")

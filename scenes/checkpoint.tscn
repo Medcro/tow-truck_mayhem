@@ -23,6 +23,7 @@ on_screen_offset = Vector2(0.5, -170)
 screen_margin = 80.0
 
 [node name="WinningSfx" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("3_vsimk")
 volume_db = -4.0
 bus = &"SFX"

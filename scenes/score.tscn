@@ -39,7 +39,6 @@ script = ExtResource("1_8juob")
 
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,6 +93,16 @@ texture = ExtResource("7_4qrk4")
 visible = false
 position = Vector2(429, 269)
 texture = ExtResource("8_usgcu")
+
+[node name="Tow-Bucks" type="Label" parent="Panel"]
+self_modulate = Color(0.9028552, 0.90285546, 7.70092e-07, 1)
+layout_mode = 0
+offset_left = 568.0
+offset_top = 305.0
+offset_right = 668.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 36
+text = "0"
 
 [connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
