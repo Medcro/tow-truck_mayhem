@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cvbo5hfhsq75y"]
+
+[ext_resource type="Texture2D" uid="uid://ptivdibwi1m4" path="res://assets/win/RetryWin.png" id="1_0araj"]
+
+[resource]
+atlas = ExtResource("1_0araj")
+region = Rect2(117, 202.96652, 119, 39.186615)

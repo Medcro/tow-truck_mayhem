@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dupdys1upbkhd"]
+
+[ext_resource type="Texture2D" uid="uid://cts37ip5dkibe" path="res://assets/win/FullStar.png" id="1_j02wh"]
+
+[resource]
+atlas = ExtResource("1_j02wh")
+region = Rect2(217.20609, 124.344086, 52.013397, 46.790283)

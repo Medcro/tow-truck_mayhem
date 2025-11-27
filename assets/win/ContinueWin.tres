@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cnhhtcsnnupon"]
+
+[ext_resource type="Texture2D" uid="uid://fw6tpf7ml4x0" path="res://assets/win/ContinueWin.png" id="1_qbgou"]
+
+[resource]
+atlas = ExtResource("1_qbgou")
+region = Rect2(248.27385, 202.25043, 129.80348, 38.620956)

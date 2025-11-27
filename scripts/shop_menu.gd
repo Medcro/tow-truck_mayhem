@@ -41,13 +41,13 @@ func attempt_purchase(cost: int, is_level_unlocked: bool, already_owned: bool) -
 	return true
 
 func _on_buy_pressed() -> void:
-	if attempt_purchase(100, LevelCore.lvl0_completed, GlobalData.hasItem1):
+	if attempt_purchase(100, GlobalData.is_level_complete("Level_0"), GlobalData.hasItem1):
 		GlobalData.hasItem1 = true
 
 func _on_buy_2_pressed() -> void:
-	if attempt_purchase(200, LevelCore.lvl1_completed, GlobalData.hasItem2):
+	if attempt_purchase(200, GlobalData.is_level_complete("Level_1"), GlobalData.hasItem2):
 		GlobalData.hasItem2 = true
 
 func _on_buy_3_pressed() -> void:
-	if attempt_purchase(300, LevelCore.lvl4_completed, GlobalData.hasItem3):
+	if attempt_purchase(300, GlobalData.is_level_complete("Level_4"), GlobalData.hasItem3):
 		GlobalData.hasItem3 = true

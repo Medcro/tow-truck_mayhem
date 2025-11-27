@@ -12,7 +12,6 @@ extends Control
 @onready var level_4_locked: Label = $Panel/LevelLockedContainer/Level4_locked
 @onready var level_5_locked: Label = $Panel/LevelLockedContainer/Level5_locked
 
-
 @onready var panel: Panel = $Panel
 @onready var button_pressed_sfx: AudioStreamPlayer = $ButtonPressed_SFX
 

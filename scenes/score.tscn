@@ -1,6 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctxrebt4dd380"]
+[gd_scene load_steps=20 format=3 uid="uid://ctxrebt4dd380"]
 
 [ext_resource type="Script" uid="uid://dkgcoqf4qbcw8" path="res://scripts/score.gd" id="1_8juob"]
+[ext_resource type="Texture2D" uid="uid://cjf4ipq81d007" path="res://assets/win/Win.png" id="2_bak1h"]
+[ext_resource type="Texture2D" uid="uid://cvbo5hfhsq75y" path="res://assets/win/RetryWin.tres" id="3_lew60"]
+[ext_resource type="Texture2D" uid="uid://cnhhtcsnnupon" path="res://assets/win/ContinueWin.tres" id="4_68bkv"]
+[ext_resource type="Texture2D" uid="uid://d10v8pfddec1a" path="res://assets/win/EmptyStar.png" id="5_x4ir2"]
+[ext_resource type="Texture2D" uid="uid://bi5axr3j6p52v" path="res://assets/win/star1.tres" id="6_7w2o3"]
+[ext_resource type="Texture2D" uid="uid://btipmt1eyqaqq" path="res://assets/win/star2.tres" id="7_4qrk4"]
+[ext_resource type="Texture2D" uid="uid://dupdys1upbkhd" path="res://assets/win/star3.tres" id="8_usgcu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plgac"]
+texture = ExtResource("2_bak1h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcjqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3eqfp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4ir2"]
+texture = ExtResource("3_lew60")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w2o3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4qrk4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usgcu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1470"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wwd1"]
+texture = ExtResource("4_68bkv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vl7ir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejv83"]
 
 [node name="Score" type="Node"]
 script = ExtResource("1_8juob")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = 92.0
+offset_right = -128.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_plgac")
+
+[node name="Retry" type="Button" parent="Panel"]
+process_mode = 3
+layout_mode = 0
+offset_left = 205.0
+offset_top = 363.0
+offset_right = 414.0
+offset_bottom = 434.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xcjqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3eqfp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x4ir2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7w2o3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4qrk4")
+
+[node name="Continue" type="Button" parent="Panel"]
+process_mode = 3
+layout_mode = 0
+offset_left = 434.0
+offset_top = 363.0
+offset_right = 663.0
+offset_bottom = 430.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_usgcu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y1470")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7wwd1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vl7ir")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ejv83")
+
+[node name="EmptyStar" type="Sprite2D" parent="Panel"]
+position = Vector2(426, 257)
+texture = ExtResource("5_x4ir2")
+
+[node name="Star1" type="Sprite2D" parent="Panel"]
+position = Vector2(357, 269)
+texture = ExtResource("6_7w2o3")
+
+[node name="Star2" type="Sprite2D" parent="Panel"]
+visible = false
+position = Vector2(498, 270)
+texture = ExtResource("7_4qrk4")
+
+[node name="Star3" type="Sprite2D" parent="Panel"]
+visible = false
+position = Vector2(429, 269)
+texture = ExtResource("8_usgcu")
+
+[connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
