@@ -56,22 +56,22 @@ func _reveal_stars() -> void:
 		star_2.visible = false
 		star_3.visible = false
 	
-	if level_name == "Level_0":
+	if level_name == "Level_0" and (GlobalData.is_level_complete("Level_0")):
 		GlobalData.tow_bucks += 5
 		tow_bucks.text = "5"
-	if level_name == "Level_1":
+	if level_name == "Level_1" and (GlobalData.is_level_complete("Level_1")):
 		GlobalData.tow_bucks += 10
 		tow_bucks.text = "10"
-	if level_name == "Level_2":
+	if level_name == "Level_2" and (GlobalData.is_level_complete("Level_2")):
 		GlobalData.tow_bucks += 15
 		tow_bucks.text = "15"
-	if level_name == "Level_3":
+	if level_name == "Level_3" and (GlobalData.is_level_complete("Level_3")):
 		GlobalData.tow_bucks += 20
 		tow_bucks.text = "20"
-	if level_name == "Level_4":
+	if level_name == "Level_4" and (GlobalData.is_level_complete("Level_4")):
 		GlobalData.tow_bucks += 25
 		tow_bucks.text = "25"
-	if level_name == "Level_5":
+	if level_name == "Level_5" and (GlobalData.is_level_complete("Level_5")):
 		GlobalData.tow_bucks += 30
 		tow_bucks.text = "30"
 

@@ -29,6 +29,8 @@ func _process(delta):
 	else:
 		# Resume timer if it was stopped
 		if timer.is_stopped():
+			if label.text == "00:00":
+				return
 			timer.start()
 
 	# Format: MM:SS with leading zeros (e.g., "05:09")

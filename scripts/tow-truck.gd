@@ -15,7 +15,6 @@ extends CharacterBody2D
 @export var traction_fast: float = 0.1 
 @export var traction_slow: float = 0.7 
 
-# NEW: Control switch
 var input_enabled: bool = true
 
 var acceleration: Vector2 = Vector2.ZERO
@@ -27,30 +26,30 @@ func _ready():
 	
 func _physics_process(delta: float):
 	handleSound()
-	
+
 	acceleration = Vector2.ZERO
-	
+
 	get_input()
+
+	if GameState.player_boost:
+		acceleration *= 2 
+
+
 	apply_friction()
 	calculate_steering(delta)
 	
 	velocity += acceleration * delta
-	
-	var collision = move_and_collide(velocity*delta)
+
+	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		
 	move_and_slide()
-	
+
 	if GameState.player_invincible:
 		modulate.a = 0.4
 	else:
 		modulate.a = 1.0
-	
-	if GameState.player_boost:
-		acceleration = acceleration*2
-	else:
-		acceleration = acceleration
 
 func get_input():
 	if input_enabled:

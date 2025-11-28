@@ -26,17 +26,20 @@ radius = 12.588114
 height = 65.961334
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
-radius = 30.027796
-height = 134.07794
+radius = 31.996029
+height = 135.42033
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_a8ls1")
 
 [node name="Tow-Truck" parent="." instance=ExtResource("1_g2els")]
 position = Vector2(146, -3)
-engine_power = 350.0
-braking_power = -400.0
-max_speed_reversed = 200.0
+engine_power = 380.0
+braking_power = -320.0
+drag = -0.005
+slip_speed = 300.0
+traction_fast = 0.5
+traction_slow = 0.8
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tow-Truck"]
 rotation = 1.5647471
@@ -83,6 +86,7 @@ script = ExtResource("3_smehm")
 health = NodePath("../../Health")
 
 [node name="HurtboxArea" type="CollisionShape2D" parent="Car/Hurtbox"]
+position = Vector2(0.999876, -0.015759945)
 shape = SubResource("CapsuleShape2D_smehm")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]

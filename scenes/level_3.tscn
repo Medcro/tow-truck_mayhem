@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://coyuw4twy2xyf"]
+[gd_scene load_steps=13 format=4 uid="uid://coyuw4twy2xyf"]
 
 [ext_resource type="Script" uid="uid://wn0i3g7bv8c1" path="res://scripts/level_manager.gd" id="1_56dhn"]
 [ext_resource type="TileSet" uid="uid://dugf0i3e7mifh" path="res://assets/tilemap/tilemaps.tres" id="1_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://rni2yfyra013" path="res://scenes/player.tscn" id="2_wae8j"]
 [ext_resource type="PackedScene" uid="uid://b8t703ammwdme" path="res://scenes/pause_menu.tscn" id="3_ha73p"]
+[ext_resource type="Texture2D" uid="uid://duglbn8xvihmr" path="res://assets/cars/cars/car3.tres" id="4_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://wp3dtf2tgjc" path="res://scenes/timer.tscn" id="4_vcx5n"]
 [ext_resource type="PackedScene" uid="uid://bxt85dgajr42e" path="res://scenes/game_over_manager.tscn" id="5_56dhn"]
 [ext_resource type="AudioStream" uid="uid://dqgese56bc37t" path="res://assets/audio/Level Start SFX.mp3" id="6_ax3dk"]
@@ -38,6 +39,7 @@ metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_wae8j")]
 position = Vector2(0, 46)
+level_specific_car_texture = ExtResource("4_ax3dk")
 
 [node name="pause_menu" parent="." instance=ExtResource("3_ha73p")]
 

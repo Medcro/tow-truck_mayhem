@@ -1,9 +1,9 @@
 extends Node2D
 class_name Player
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	set_texture()
 
-func set_texture() -> void:
-	$"Tow-Truck/Sprite2D2".set_self_modulate(GlobalData.truck_color_array[GlobalData.current_truck])
-	$Car/Sprite2D2.texture = GlobalData.car_array[GlobalData.current_car]
+@export var level_specific_car_texture: Texture2D
+@onready var car_sprite: Sprite2D = $Car/Sprite2D 
+
+func _ready() -> void:
+	if level_specific_car_texture != null:
+		car_sprite.texture = level_specific_car_texture

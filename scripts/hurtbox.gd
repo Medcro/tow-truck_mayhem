@@ -11,10 +11,16 @@ signal player_lost
 var collided_bodies: Array[Node2D] = []
 
 func _ready():
-	body_exited.connect(_on_body_exited)
+	if not body_shape_entered.is_connected(_on_body_shape_entered):
+		body_shape_entered.connect(_on_body_shape_entered)
+	
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
 	
 	if health == null:
-		health = get_parent().get_parent().get_node_or_null("Health")
+		var parent = get_parent()
+		if parent and parent.get_parent():
+			health = parent.get_parent().get_node_or_null("Health")
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int):
 	if body is Collision and body not in collided_bodies:

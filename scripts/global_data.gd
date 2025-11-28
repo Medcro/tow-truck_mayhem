@@ -45,8 +45,8 @@ func get_data() -> void:
 		car_array.append(load("res://assets/cars/cars/" + file))
 
 func is_level_complete(level_name: String) -> bool:
-	return completed_levels.get(level_name, false)		
-		
+	return completed_levels.get(level_name, false)
+
 func save_game_data():
 	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE)
 	
@@ -56,7 +56,10 @@ func save_game_data():
 		"times": level_times,
 		"money": tow_bucks,
 		"truck_idx": current_truck,
-		"car_idx": current_car
+		"car_idx": current_car,
+		"has_item_1": hasItem1,
+		"has_item_2": hasItem2,
+		"has_item_3": hasItem3
 	}
 	file.store_var(save_data)
 
@@ -72,3 +75,6 @@ func load_game_data():
 	tow_bucks = save_data.get("money", 0)
 	current_truck = save_data.get("truck_idx", 0)
 	current_car = save_data.get("car_idx", 0)
+	hasItem1 = save_data.get("has_item_1", false)
+	hasItem2 = save_data.get("has_item_2", false)
+	hasItem3 = save_data.get("has_item_3", false)
